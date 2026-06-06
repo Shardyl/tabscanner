@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-06-07
+- Fix the real mobile-overflow root cause: `min-width:0` on hero/dev/compare/contact grid items
+  and the scanner card children, so the `.json` block's intrinsic width no longer forces the grid
+  column (and the H1) wider than the viewport. Verified: scrollWidth == viewport at 375px.
+
 ## 0.1.1 — 2026-06-07
 - Fix mobile horizontal overflow: nav collapses Login + Get Started into the burger drawer
   (`.nav-menu` display:contents → drawer), lock `html/body` overflow-x, shrink hero H1 on mobile.
