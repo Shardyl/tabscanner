@@ -1,0 +1,42 @@
+name: Deploy to WP Engine (tabscanner)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'theme/**'
+      - 'mu-plugins/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure SSH for WP Engine
+        env:
+          KEY_B64: ${{ secrets.WPE_SSH_KEY_B64 }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$KEY_B64" | base64 -d > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t rsa,ed25519 tabscanner.ssh.wpengine.net >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy theme + mu-plugins via rsync over SSH gateway
+        run: |
+          GW="tabscanner@tabscanner.ssh.wpengine.net"
+          ROOT="/sites/tabscanner"
+          SSH="ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          # Theme — exact mirror
+          rsync -az --delete --exclude '.DS_Store' -e "$SSH" theme/ "$GW:$ROOT/wp-content/themes/tabscanner/"
+          # mu-plugins — additive (never delete WPE's own)
+          rsync -az --exclude '.DS_Store' -e "$SSH" mu-plugins/ "$GW:$ROOT/wp-content/mu-plugins/"
+          # Flush caches
+          $SSH "$GW" "wp cache flush; wp page-cache flush" || true
+
+      - name: Verify live
+        run: |
+          sleep 8
+          curl -s -o /dev/null -w "home: %{http_code}\n" "https://tabscanner.wpenginepowered.com/?cb=ci${GITHUB_RUN_ID}" || true

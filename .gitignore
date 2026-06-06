@@ -1,0 +1,6 @@
+# Working data — never deployed
+_scrape/
+node_modules/
+.DS_Store
+*.log
+Thumbs.db

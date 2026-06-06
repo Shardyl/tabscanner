@@ -1,0 +1,15 @@
+/*
+Theme Name: Tabscanner
+Theme URI: https://tabscanner.com
+Description: Tabscanner — Receipt OCR API. Custom AI/SaaS theme (Kadence child) carrying the v4 design: Tabscanner blue (#29B3EB), Space Grotesk + Inter, AI hero with receipt-to-JSON detection.
+Author: Sensa Productions
+Author URI: https://sensa.digital
+Template: kadence
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 8.1
+License: GPL-2.0-or-later
+Text Domain: tabscanner
+*/
+
+/* All design lives in assets/css/app.css (enqueued). This file is the child-theme header only. */
