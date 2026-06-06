@@ -14,16 +14,18 @@
 <header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/tabscanner-logo.png" alt="Tabscanner"></a>
-    <nav class="nav-links">
-      <a href="#">Use Cases <i class="chev"></i></a>
-      <a href="<?php echo esc_url(home_url('/pricing/')); ?>">Pricing</a>
-      <a href="#demo">Demo</a>
-      <a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Contact Us</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="login" href="https://dashboard.tabscanner.com/login">LOGIN</a>
-      <a class="btn btn-primary" href="https://dashboard.tabscanner.com/register">Get Started <span class="arr">→</span></a>
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="#">Use Cases <i class="chev"></i></a>
+        <a href="<?php echo esc_url(home_url('/pricing/')); ?>">Pricing</a>
+        <a href="#demo">Demo</a>
+        <a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Contact Us</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="login" href="https://dashboard.tabscanner.com/login">LOGIN</a>
+        <a class="btn btn-primary" href="https://dashboard.tabscanner.com/register">Get Started <span class="arr">→</span></a>
+      </div>
     </div>
-    <div class="burger"><span></span><span></span><span></span></div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>

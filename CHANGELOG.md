@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-06-07
+- Fix mobile horizontal overflow: nav collapses Login + Get Started into the burger drawer
+  (`.nav-menu` display:contents → drawer), lock `html/body` overflow-x, shrink hero H1 on mobile.
+
 ## 0.1.0 — 2026-06-07
 - Initial scaffold: Kadence child theme `tabscanner` carrying the locked v4 design.
 - Homepage (`front-page.php`) built word-for-word from the live site, redesigned (AI/SaaS, Tabscanner blue).

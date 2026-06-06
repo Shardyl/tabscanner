@@ -1,7 +1,14 @@
-document.querySelector('.burger').addEventListener('click',()=>{
-  const n=document.querySelector('.nav-links');
-  n.style.cssText='display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 26px;gap:16px;border-bottom:1px solid var(--line)';
-});
+(function(){
+  var burger=document.querySelector('.burger'), nav=document.querySelector('header.nav');
+  if(!burger||!nav) return;
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open?'true':'false');
+  });
+  nav.querySelectorAll('.nav-menu a').forEach(function(a){
+    a.addEventListener('click',function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+})();
 // tabs
 document.querySelectorAll('.tabnav').forEach(nav=>{
   nav.querySelectorAll('button').forEach(b=>{
