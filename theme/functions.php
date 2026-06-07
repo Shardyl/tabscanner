@@ -5,7 +5,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TABSCANNER_VERSION', '0.3.1' ); // bump every ship
+define( 'TABSCANNER_VERSION', '0.3.2' ); // bump every ship
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/contact-form.php';

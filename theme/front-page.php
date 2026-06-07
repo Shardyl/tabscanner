@@ -355,9 +355,9 @@
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">Advanced AI OCR</span><h2>Receipt Scanner API Insights</h2><p>Resources for the Tabscanner API. Delve deeper into our AI OCR development. Layout-aware pipeline and receipt understanding. Plus tutorials for different code languages. How we guarantee real time processing. Why a POS receipts specialist is ideal for supermarket CPG brands.</p></div>
     <div class="res">
-      <div class="card rv"><div class="thumb"></div><div class="body"><h4>Tabscanner API FAQ</h4><p>Frequently Asked Questions about the Tabscanner API. This post is...</p></div></div>
-      <div class="card rv"><div class="thumb"></div><div class="body"><h4>Tabscanner Comparison Vs the Receipt OCR API Top Tier by AI</h4><p>This comparison was carried out after the spring 2025...</p></div></div>
-      <div class="card rv"><div class="thumb"></div><div class="body"><h4>Receipt OCR Using c-sharp [C# A Complete Guide 2025]</h4><p>In this blog post, we'll walk through how to...</p></div></div>
+      <a class="card rv" href="<?php echo esc_url(home_url('/faq/')); ?>"><div class="thumb"></div><div class="body"><h4>Tabscanner API FAQ</h4><p>Frequently Asked Questions about the Tabscanner API. This post is...</p></div></a>
+      <a class="card rv" href="<?php echo esc_url(home_url('/tabscanner-comparisons-vs-top-receipt-ocr/')); ?>"><div class="thumb"></div><div class="body"><h4>Tabscanner Comparison Vs the Receipt OCR API Top Tier by AI</h4><p>This comparison was carried out after the spring 2025...</p></div></a>
+      <a class="card rv" href="<?php echo esc_url(home_url('/receipt-ocr-using-c-sharp-a-complete-guide-2025/')); ?>"><div class="thumb"></div><div class="body"><h4>Receipt OCR Using c-sharp [C# A Complete Guide 2025]</h4><p>In this blog post, we'll walk through how to...</p></div></a>
     </div>
   </div>
 </section>

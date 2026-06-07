@@ -16,9 +16,9 @@
     <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/tabscanner-logo.png" alt="Tabscanner"></a>
     <div class="nav-menu">
       <nav class="nav-links">
-        <a href="#">Use Cases <i class="chev"></i></a>
+        <a href="<?php echo esc_url(home_url('/tabscanner-case-studies/')); ?>">Use Cases</a>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>">Pricing</a>
-        <a href="#demo">Demo</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>#demo">Demo</a>
         <a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Contact Us</a>
       </nav>
       <div class="nav-cta">
