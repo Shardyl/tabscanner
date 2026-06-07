@@ -13,14 +13,14 @@
         <p class="lead">Get 99-99.99%+ accurate receipt data extraction at the industry's lowest cost. Reliable at any scale. Our synchronous, low-latency OCR engine offer immediate real-time structured data. Our demo is the only one with a timer so you can see for yourself our industry leading speed.</p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="#demo">RUN LIVE SPEED TEST <span class="arr">→</span></a>
-          <a class="btn btn-ghost btn-lg" href="#">FREE TO USE NOW</a>
+          <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">FREE TO USE NOW</a>
         </div>
         <div class="altrow">
           <span class="or">or</span>
           <a class="s" href="#">Sign in with Google</a>
           <a class="s" href="#">Sign up with Email</a>
         </div>
-        <p class="fine">Already have an account? <a href="#">Log in</a>. No card required for free plan.</p>
+        <p class="fine">Already have an account? <a href="https://dashboard.tabscanner.com/login">Log in</a>. No card required for free plan.</p>
         <div class="aichips">
           <span class="aichip">Transformer models</span>
           <span class="aichip">Layout-aware pipeline</span>
@@ -115,7 +115,7 @@
       </div>
       <div class="tabpane on" id="a1">
         <h4>Receipt Extraction with Advanced AI-Driven OCR</h4>
-        <p>Tabscanner is the most advanced receipt parsing API. Now available as a <a href="#" style="color:var(--brand-3)">Microsoft Connector</a>. Delivering accuracy beyond human precision through deep learning with huge datasets. Plus cutting-edge AI technologies, such as custom neural networks and a layout aware pipeline.</p>
+        <p>Tabscanner is the most advanced receipt parsing API. Now available as a <strong>Microsoft Connector</strong>. Delivering accuracy beyond human precision through deep learning with huge datasets. Plus cutting-edge AI technologies, such as custom neural networks and a layout aware pipeline.</p>
         <p>Built for speed and scale (up to 5 million receipt scanner API calls per day). Tabscanner offers global language support for every country. Advanced table detection and more detailed line-item extraction for 2026. All with simple integration across any platform</p>
         <p>We match or exceed top-tier competitors in security, privacy, pricing, and features. All while providing personalized support like custom regional configurations. Whether you're a startup or a multinational, Tabscanner offers unmatched performance at a lower cost.</p>
       </div>
@@ -197,7 +197,7 @@
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Parameters</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Regional configs</li>
         </ul>
-        <a class="btn btn-ghost" href="#">GET STARTED</a>
+        <a class="btn btn-ghost" href="https://dashboard.tabscanner.com/register">GET STARTED</a>
       </div>
       <div class="plan rv">
         <div class="name">Per Credit</div><div class="tagline">300 monthly credits.</div>
@@ -210,7 +210,7 @@
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Regional Configs</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Scalable and flexible credits</li>
         </ul>
-        <a class="btn btn-ghost" href="#">GET STARTED</a>
+        <a class="btn btn-ghost" href="https://dashboard.tabscanner.com/register">GET STARTED</a>
       </div>
       <div class="plan pop rv">
         <div class="name">Business</div><div class="tagline">6000 monthly credits.</div>
@@ -224,7 +224,7 @@
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Scalable and flexible credits</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Dedicated support</li>
         </ul>
-        <a class="btn btn-primary" href="#">GET STARTED</a>
+        <a class="btn btn-primary" href="https://dashboard.tabscanner.com/register">GET STARTED</a>
       </div>
       <div class="plan rv">
         <div class="name">Enterprise</div><div class="tagline">custom training and support</div>
@@ -313,12 +313,12 @@
       <h2>Ready to power up your software with Tabscanner's Receipt API?</h2>
       <h3>Plug into our receipt scanner OCR and get your software up and running with the most advanced IDP API.</h3>
       <div class="row">
-        <a class="btn btn-ghost btn-lg" href="#">TEST DRIVE THE UPLOADER <span class="arr">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">TEST DRIVE THE UPLOADER <span class="arr">→</span></a>
         <span class="or">or</span>
-        <a class="s" href="#">Sign in with Google</a>
-        <a class="s" href="#">Sign up with Email</a>
+        <a class="s" href="https://dashboard.tabscanner.com/social-login/google">Sign in with Google</a>
+        <a class="s" href="https://dashboard.tabscanner.com/register">Sign up with Email</a>
       </div>
-      <div class="note">By proceeding, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
+      <div class="note">By proceeding, you agree to the <a href="<?php echo esc_url(home_url('/terms-of-website-use/')); ?>">Terms of Service</a> and <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a></div>
     </div>
   </div>
 </section>
@@ -332,19 +332,19 @@
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.8L3 8.9 9 8z"/></svg></div>
         <h4>Loyalty Rewards</h4>
         <p>Software developers need a simple, lightweight receipt recognition API. Integrate the Tabscanner API with apps for the most efficient image data extraction possible. The hands-off receipt API makes proof of purchase quick, easy and reliable. Automated first party data, cashback and reward schemes</p>
-        <a class="link" href="#">Receipt Processing For Loyalty <span class="arr">→</span></a>
+        <a class="link" href="<?php echo esc_url(home_url('/loyalty-program-receipt-scanning/')); ?>">Receipt Processing For Loyalty <span class="arr">→</span></a>
       </div>
       <div class="card rv">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 21l-4.3-4.3M11 18a7 7 0 100-14 7 7 0 000 14z"/></svg></div>
         <h4>Market Research</h4>
         <p>See how our receipt OCR API can drive product matching for CPG brands. Receipt scanner apps replaced coupons with valuable consumer insights. Global multilingual OCR capability. Collect SKU-level line items. With Advanced AI OCR, supermarket receipts show purchase validation to combat fraud.</p>
-        <a class="link" href="#">Market Research OCR <span class="arr">→</span></a>
+        <a class="link" href="<?php echo esc_url(home_url('/market-research-through-receipt-ocr/')); ?>">Market Research OCR <span class="arr">→</span></a>
       </div>
       <div class="card rv">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 3h11l4 4v14H5z"/></svg></div>
         <h4>Expense Management</h4>
         <p>Expense management software excels with more extracted fields than any other API. The best choice for response times, tax compliance and data privacy. Use as a purchase verification tool for expense reimbursement. Fraud detection and filter duplicates. Suited to bookkeeping and accounting software.</p>
-        <a class="link" href="#">OCR for Accounting Expenses <span class="arr">→</span></a>
+        <a class="link" href="<?php echo esc_url(home_url('/ocr-expense-management/')); ?>">OCR for Accounting Expenses <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -479,7 +479,7 @@
     <h2>Instant Demo of the Tabscanner Receipt OCR API</h2>
     <p>Free to use now, no credit card required. Start extracting receipt data from day 1.</p>
     <div class="row">
-      <a class="btn btn-primary btn-lg" href="#">RUN LIVE SPEED TEST <span class="arr">→</span></a>
+      <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">RUN LIVE SPEED TEST <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="#contact" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">Schedule A Chat</a>
     </div>
   </div>
