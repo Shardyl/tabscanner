@@ -6,9 +6,9 @@
         <p>AI-powered Receipt OCR to automate expense data extraction and eliminate data entry. Convert receipt images into structured JSON instantly.</p>
         <div class="addr">P316 The Binary Tower, 32 Marasi Drive,<br>Business Bay – Dubai – United Arab Emirates.<br>+971 4 578 6254</div>
       </div>
-      <div class="foot-col"><h5>Tabscanner</h5><a href="#">Receipt OCR API Pricing</a><a href="#">Loyalty Program Receipt Scanning API</a><a href="#">OCR Receipt Case Studies</a><a href="#">Receipt Data Extraction Insights (blog)</a><a href="#">Contact Tabscanner</a></div>
+      <div class="foot-col"><h5>Tabscanner</h5><a href="<?php echo esc_url(home_url('/pricing/')); ?>">Receipt OCR API Pricing</a><a href="<?php echo esc_url(home_url('/loyalty-program-receipt-scanning/')); ?>">Loyalty Program Receipt Scanning API</a><a href="<?php echo esc_url(home_url('/tabscanner-case-studies/')); ?>">OCR Receipt Case Studies</a><a href="<?php echo esc_url(home_url('/news/')); ?>">Receipt Data Extraction Insights (blog)</a><a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Contact Tabscanner</a></div>
       <div class="foot-col"><h5>Recent Articles</h5><a href="#">What Is a Layout Aware Pipeline in Receipt OCR?</a><a href="#">What Does OCR Stand For</a><a href="#">Receipt Parsing Vs Receipt OCR in 2026</a></div>
-      <div class="foot-col"><h5>OCR API Use Cases</h5><a href="#">Loyalty Program Receipt Scanning API</a><a href="#">Receipt OCR for Expense Management Software</a><a href="#">Market Research Through Receipt OCR</a></div>
+      <div class="foot-col"><h5>OCR API Use Cases</h5><a href="<?php echo esc_url(home_url('/loyalty-program-receipt-scanning/')); ?>">Loyalty Program Receipt Scanning API</a><a href="<?php echo esc_url(home_url('/ocr-expense-management/')); ?>">Receipt OCR for Expense Management Software</a><a href="<?php echo esc_url(home_url('/market-research-through-receipt-ocr/')); ?>">Market Research Through Receipt OCR</a></div>
     </div>
     <div class="foot-bottom">
       <div class="policies">

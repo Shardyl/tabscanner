@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — 2026-06-07
+- Build Contact + 4 Use Case pages (Loyalty, Expense Management, Market Research, Case Studies) in the
+  v4 style, word-for-word from the scrape. Templates: `page-{slug}.php` (auto-matched to page slugs).
+- Add interior page hero (`.phero`) + contact form REST endpoint (`tabscanner/v1/enquiry` → wp_mail
+  to api@tabscanner.com, honeypot + validation).
+- Wire footer links to the real use-case / contact / case-study URLs.
+
 ## 0.1.2 — 2026-06-07
 - Fix the real mobile-overflow root cause: `min-width:0` on hero/dev/compare/contact grid items
   and the scanner card children, so the `.json` block's intrinsic width no longer forces the grid
