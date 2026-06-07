@@ -12,11 +12,17 @@
 - [x] Kadence parent installed, `blog_public=0` set
 - [x] `WPE_SSH_KEY_B64` secret on `Shardyl/tabscanner`
 
+## Shipped (live on temp URL, noindexed)
+- [x] Homepage `front-page.php` (v0.1.0) + theme active
+- [x] Mobile overflow fixed (v0.1.2: nav burger drawer, `min-width:0`, overflow-x lock)
+- [x] Contact + 4 Use Cases (v0.2.0): `/contact-us/`, `/loyalty-program-receipt-scanning/`,
+      `/ocr-expense-management/`, `/market-research-through-receipt-ocr/`, `/tabscanner-case-studies/`
+      — all 200, word-for-word, contact form REST endpoint working
+- [x] Permalinks `/%postname%/`; pages #5–9
+
 ## Next
-- [ ] Push → deploy → `wp theme activate tabscanner` → verify homepage on temp URL
-- [ ] Contact page (form → `wp_mail` REST endpoint) + 4 Use Case templates
-- [ ] Pricing / About / Company Overview / FAQ / News (blog index)
-- [ ] page.php / single.php / archive.php
+- [ ] Pricing / About / Company Overview / FAQ / News (blog index) templates + pages
+- [ ] page.php / single.php / archive.php (generic templates)
 - [ ] Import 8 legal pages + 143 posts + categories at identical slugs (WP-CLI from `_scrape/`), import media
 - [ ] Audit fixes: right-size titles, security headers, lazy-load/WebP
 - [ ] Plugins: Rank Math (+ wizard), WP Mail SMTP (operator pastes app password for `api@tabscanner.com`)
