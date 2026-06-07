@@ -5,10 +5,12 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TABSCANNER_VERSION', '0.3.0' ); // bump every ship
+define( 'TABSCANNER_VERSION', '0.3.1' ); // bump every ship
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/contact-form.php';
+require_once get_stylesheet_directory() . '/inc/redirects.php';
+require_once get_stylesheet_directory() . '/inc/categories.php';
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
