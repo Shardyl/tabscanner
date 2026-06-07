@@ -17,8 +17,8 @@
         </div>
         <div class="altrow">
           <span class="or">or</span>
-          <a class="s" href="#">Sign in with Google</a>
-          <a class="s" href="#">Sign up with Email</a>
+          <a class="s" href="https://dashboard.tabscanner.com/social-login/google">Sign in with Google</a>
+          <a class="s" href="https://dashboard.tabscanner.com/register">Sign up with Email</a>
         </div>
         <p class="fine">Already have an account? <a href="https://dashboard.tabscanner.com/login">Log in</a>. No card required for free plan.</p>
         <div class="aichips">
