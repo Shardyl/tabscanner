@@ -20,13 +20,24 @@
       — all 200, word-for-word, contact form REST endpoint working
 - [x] Permalinks `/%postname%/`; pages #5–9
 
+## Shipped (cont.)
+- [x] Generic templates (v0.3.0): `single.php`, `page.php`, `archive.php`, `search.php`, `page-news.php`,
+      `page-pricing.php` + `.prose` styles
+- [x] Pricing + News pages live
+- [x] **Content port:** 150 items imported at exact slugs (10 pages + 140 posts) from `_scrape/import.json`
+      — 141 posts / 18 pages total; content cleaned (sidebars/chrome/inline-styles stripped),
+      dates preserved (future clamped). Default Hello-World / Sample-Page stubs removed.
+
 ## Next
-- [ ] Pricing / About / Company Overview / FAQ / News (blog index) templates + pages
-- [ ] page.php / single.php / archive.php (generic templates)
-- [ ] Import 8 legal pages + 143 posts + categories at identical slugs (WP-CLI from `_scrape/`), import media
+- [ ] Category archives `/articles/ /case-studies/ /technical/ /receipt-ocr-loyalty-rewards/
+      /receipt-ocr-api-answers/` — create categories, assign posts, remove category base (Rank Math)
+- [ ] **Media import** — imported post images currently reference absolute `tabscanner.com/...` URLs;
+      run `wp media import` + URL rewrite BEFORE go-live (else they break when DNS cuts over)
+- [ ] Enhance About / Company Overview / FAQ pages (imported as prose; optional bespoke upgrade)
 - [ ] Audit fixes: right-size titles, security headers, lazy-load/WebP
-- [ ] Plugins: Rank Math (+ wizard), WP Mail SMTP (operator pastes app password for `api@tabscanner.com`)
-- [ ] URL-parity check (all 165 → 200), Lighthouse pass
+- [ ] Plugins: Rank Math (+ wizard, sitemap), WP Mail SMTP (operator pastes `api@tabscanner.com` app pw)
+- [ ] Lighthouse pass; final URL-parity confirm
+- [ ] Go-live (operator DNS + flip `blog_public=1` + submit sitemap)
 
 ## Operator (you) to-dos
 - [ ] At go-live: DNS cutover (web records → WPE, leave email records), set primary in WPE portal, SSL
