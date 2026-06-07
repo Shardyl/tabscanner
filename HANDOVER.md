@@ -28,9 +28,11 @@
       — 141 posts / 18 pages total; content cleaned (sidebars/chrome/inline-styles stripped),
       dates preserved (future clamped). Default Hello-World / Sample-Page stubs removed.
 
+- [x] **Full URL parity: 165/165** — 5 categories created + assigned (base-less rewrites in
+      `inc/categories.php`), 2 old 301-redirects preserved (`inc/redirects.php`)
+
 ## Next
-- [ ] Category archives `/articles/ /case-studies/ /technical/ /receipt-ocr-loyalty-rewards/
-      /receipt-ocr-api-answers/` — create categories, assign posts, remove category base (Rank Math)
+- [ ] **Media import** is now the top blocker for go-live (see below)
 - [ ] **Media import** — imported post images currently reference absolute `tabscanner.com/...` URLs;
       run `wp media import` + URL rewrite BEFORE go-live (else they break when DNS cuts over)
 - [ ] Enhance About / Company Overview / FAQ pages (imported as prose; optional bespoke upgrade)
