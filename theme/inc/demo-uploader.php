@@ -60,12 +60,17 @@ function tabscanner_demo_process( WP_REST_Request $req ) {
 
 	$ext  = $type === 'image/png' ? '.png' : '.jpg';
 	$file = new CURLFile( $f['tmp_name'], $type, 'receipt' . $ext );
-	$ch   = curl_init( 'https://api.tabscanner.com/api/2/process' );
+
+	$fields = array( 'file' => $file, 'documentType' => 'receipt' );
+	$region = isset( $_POST['region'] ) ? strtoupper( preg_replace( '/[^A-Za-z]/', '', (string) $_POST['region'] ) ) : '';
+	if ( strlen( $region ) === 2 ) { $fields['region'] = $region; }
+
+	$ch = curl_init( 'https://api.tabscanner.com/api/2/process' );
 	curl_setopt_array( $ch, array(
 		CURLOPT_POST           => true,
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_HTTPHEADER     => array( 'apikey: ' . tabscanner_demo_key(), 'User-Agent: ' . TABSCANNER_DEMO_UA ),
-		CURLOPT_POSTFIELDS     => array( 'file' => $file, 'documentType' => 'receipt' ),
+		CURLOPT_POSTFIELDS     => $fields,
 		CURLOPT_TIMEOUT        => 60,
 	) );
 	$resp = curl_exec( $ch ); $err = curl_error( $ch ); curl_close( $ch );

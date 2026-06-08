@@ -67,6 +67,8 @@
       statusT.textContent = 'Uploading…';
       var fd = new FormData();
       fd.append('file', blob, 'receipt.jpg');
+      var regionEl = document.getElementById('uplRegion');
+      if (regionEl && regionEl.value) { fd.append('region', regionEl.value); }
       return fetch(base + 'demo-process', { method: 'POST', body: fd }).then(function (r) { return r.json(); });
     }).then(function (pr) {
       if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || 'Upload failed.'); }

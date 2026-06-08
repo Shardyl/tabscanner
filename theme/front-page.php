@@ -34,6 +34,38 @@
         <div class="scan-top"><i></i><i></i><i></i><span>POST api.tabscanner.com/process</span><span class="modelbadge">tabscanner-ocr · v9</span></div>
         <div class="upl">
           <div class="upl-idle">
+            <div class="upl-region">
+              <label for="uplRegion">Receipt region</label>
+              <select id="uplRegion">
+                <option value="">Auto-detect</option>
+                <option value="US">United States</option>
+                <option value="GB">United Kingdom</option>
+                <option value="AE">United Arab Emirates</option>
+                <option value="NO">Norway</option>
+                <option value="IT">Italy</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+                <option value="ES">Spain</option>
+                <option value="NL">Netherlands</option>
+                <option value="SE">Sweden</option>
+                <option value="DK">Denmark</option>
+                <option value="FI">Finland</option>
+                <option value="IE">Ireland</option>
+                <option value="CH">Switzerland</option>
+                <option value="BE">Belgium</option>
+                <option value="AT">Austria</option>
+                <option value="PT">Portugal</option>
+                <option value="JP">Japan</option>
+                <option value="AU">Australia</option>
+                <option value="CA">Canada</option>
+                <option value="NZ">New Zealand</option>
+                <option value="SG">Singapore</option>
+                <option value="IN">India</option>
+                <option value="ZA">South Africa</option>
+                <option value="BR">Brazil</option>
+                <option value="MX">Mexico</option>
+              </select>
+            </div>
             <div class="upl-drop" id="uplDrop">
               <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></div>
               <h4>Drop a receipt to try it live</h4>
