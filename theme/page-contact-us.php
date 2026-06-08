@@ -7,9 +7,9 @@ get_header(); ?>
 <section class="phero">
   <div class="dots"></div><div class="orb"></div>
   <div class="wrap in">
-    <span class="eyebrow">Contact</span>
-    <h1>Contact <span class="g">Tabscanner</span></h1>
-    <p class="lead">Just send a message or call, and we will be happy to set up a meeting to answer any questions or concerns. Our team will get back to you quickly.</p>
+    <span class="eyebrow"><?php echo sc_text( 'contactpg_eyebrow' ); ?></span>
+    <h1><?php echo sc_text( 'contactpg_h1' ); ?></h1>
+    <p class="lead"><?php echo sc_text( 'contactpg_lead' ); ?></p>
   </div>
 </section>
 
@@ -17,16 +17,15 @@ get_header(); ?>
   <div class="wrap">
     <div class="contact">
       <div>
-        <span class="eyebrow">Our Offices</span>
-        <h2 style="font-size:30px;margin:14px 0 22px">Talk to the team</h2>
+        <span class="eyebrow"><?php echo sc_text( 'contactpg_offices_eyebrow' ); ?></span>
+        <h2 style="font-size:30px;margin:14px 0 22px"><?php echo sc_text( 'contactpg_offices_h2' ); ?></h2>
         <div class="office">
-          <h4>Headquarters — Dubai</h4>
-          <p>P316 The Binary Tower, 32 Marasi Drive, Business Bay, Dubai, United Arab Emirates<br>
-          Tel: +971 4 5786 254 — Available 9:00 a.m. – 5:00 p.m. GST</p>
+          <h4><?php echo sc_text( 'contactpg_hq_h4' ); ?></h4>
+          <p><?php echo sc_text( 'contactpg_hq_p' ); ?></p>
         </div>
         <div class="office">
-          <h4>USA Office — Austin</h4>
-          <p>3300 Bee Cave Rd, Suite 650 #1202, Austin, TX 78746, United States</p>
+          <h4><?php echo sc_text( 'contactpg_usa_h4' ); ?></h4>
+          <p><?php echo sc_text( 'contactpg_usa_p' ); ?></p>
         </div>
         <div class="office">
           <h4>Press Kit</h4>

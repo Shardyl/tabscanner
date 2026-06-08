@@ -7,9 +7,9 @@ get_header(); ?>
 <section class="phero">
   <div class="dots"></div><div class="orb"></div>
   <div class="wrap in">
-    <span class="eyebrow">Case Studies</span>
-    <h1>Tabscanner <span class="g">Case Studies</span></h1>
-    <p class="lead">Insight into the power of the world's number 1 receipt parsing API. Information extraction from receipts using machine learning and deep learning AI. Faster, more accurate and better value than alternatives.</p>
+    <span class="eyebrow"><?php echo sc_text( 'cs_eyebrow' ); ?></span>
+    <h1><?php echo sc_text( 'cs_h1' ); ?></h1>
+    <p class="lead"><?php echo sc_text( 'cs_lead' ); ?></p>
     <div class="row">
       <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Test Drive The Uploader <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>
@@ -74,9 +74,9 @@ get_header(); ?>
 <section class="final">
   <div class="orb orbf1"></div>
   <div class="wrap in">
-    <span class="eyebrow" style="color:#7FD3F5">Get Started</span>
-    <h2>Power your app with the most accurate Receipt OCR API</h2>
-    <p>Sign in with Google or sign up with email. No credit card is needed. It is quick and easy.</p>
+    <span class="eyebrow" style="color:#7FD3F5"><?php echo sc_text( 'cs_final_eyebrow' ); ?></span>
+    <h2><?php echo sc_text( 'cs_final_h2' ); ?></h2>
+    <p><?php echo sc_text( 'cs_final_p' ); ?></p>
     <div class="row">
       <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Test Drive The Uploader <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="<?php echo esc_url( home_url('/contact-us/') ); ?>" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">Contact Us</a>

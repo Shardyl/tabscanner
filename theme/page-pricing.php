@@ -7,9 +7,9 @@ get_header(); ?>
 <section class="phero">
   <div class="dots"></div><div class="orb"></div>
   <div class="wrap in">
-    <span class="eyebrow">Pricing</span>
-    <h1>Simple <span class="g">Monthly Plans</span></h1>
-    <p class="lead">1 credit = 1 receipt scan. No credit card required for starter plan.</p>
+    <span class="eyebrow"><?php echo sc_text( 'pricepg_eyebrow' ); ?></span>
+    <h1><?php echo sc_text( 'pricepg_h1' ); ?></h1>
+    <p class="lead"><?php echo sc_text( 'pricepg_lead' ); ?></p>
   </div>
 </section>
 
@@ -71,15 +71,15 @@ get_header(); ?>
         <a class="btn btn-ghost" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">GET STARTED</a>
       </div>
     </div>
-    <p class="price-note">Our enterprise plans are far less expensive than competitors like Amazon and Veryfi, at a fraction of a cent depending on volume.</p>
+    <p class="price-note"><?php echo sc_text( 'pricepg_note' ); ?></p>
   </div>
 </section>
 
 <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="midcta">
-      <h2>Free to use now</h2>
-      <h3>Start extracting receipt data from day 1. No credit card required for the starter plan.</h3>
+      <h2><?php echo sc_text( 'pricepg_midcta_h2' ); ?></h2>
+      <h3><?php echo sc_text( 'pricepg_midcta_h3' ); ?></h3>
       <div class="row">
         <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">Get Started Free <span class="arr">→</span></a>
         <a class="s" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>

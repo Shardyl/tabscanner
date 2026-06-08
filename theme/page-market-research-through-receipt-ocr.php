@@ -7,9 +7,9 @@ get_header(); ?>
 <section class="phero">
   <div class="dots"></div><div class="orb"></div>
   <div class="wrap in">
-    <span class="eyebrow">Market Research</span>
-    <h1>Market Research Through <span class="g">Receipt OCR</span></h1>
-    <p class="lead">A fast and accurate AI trained to understand and extract labelled data from receipt images. Sign up and get 200 credits a month completely free!</p>
+    <span class="eyebrow"><?php echo sc_text( 'mr_eyebrow' ); ?></span>
+    <h1><?php echo sc_text( 'mr_h1' ); ?></h1>
+    <p class="lead"><?php echo sc_text( 'mr_lead' ); ?></p>
     <div class="row">
       <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Get Started Free <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>
@@ -54,8 +54,8 @@ get_header(); ?>
 <section class="section">
   <div class="wrap">
     <div class="midcta">
-      <h2>Ready to start gathering insights with Tabscanner?</h2>
-      <h3>Plug into our API and get your software up and running with a fast, accurate and reliable solution.</h3>
+      <h2><?php echo sc_text( 'mr_midcta_h2' ); ?></h2>
+      <h3><?php echo sc_text( 'mr_midcta_h3' ); ?></h3>
       <div class="row">
         <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">Get Started Free <span class="arr">→</span></a>
         <a class="s" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>

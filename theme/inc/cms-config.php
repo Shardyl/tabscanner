@@ -18,7 +18,7 @@ add_filter( 'sensa_cms_config', function () {
 
 		// Bespoke (code-template) pages: clean classic editor + on-page Text/Images panels.
 		// The front page also gets all fields on the central Sensa CMS -> Page Text screen.
-		'bespoke_slugs' => array( 'home', 'contact-us', 'pricing' ),
+		'bespoke_slugs' => array( 'home', 'contact-us', 'pricing', 'loyalty-program-receipt-scanning', 'market-research-through-receipt-ocr', 'ocr-expense-management', 'tabscanner-case-studies' ),
 
 		// ---- Editable TEXT ----------------------------------------------------
 		'text' => array(
@@ -115,10 +115,77 @@ add_filter( 'sensa_cms_config', function () {
 					),
 				),
 
+				'page_contact' => array(
+					'label'  => 'Page — Contact Us',
+					'fields' => array(
+						array( 'k' => 'contactpg_eyebrow', 'l' => 'Hero eyebrow', 'd' => 'Contact' ),
+						array( 'k' => 'contactpg_h1', 'l' => 'Hero headline (HTML ok)', 'ta' => 1, 'd' => "Contact <span class='g'>Tabscanner</span>" ),
+						array( 'k' => 'contactpg_lead', 'l' => 'Hero paragraph', 'ta' => 1, 'd' => 'Just send a message or call, and we will be happy to set up a meeting to answer any questions or concerns. Our team will get back to you quickly.' ),
+						array( 'k' => 'contactpg_offices_eyebrow', 'l' => 'Offices: eyebrow', 'd' => 'Our Offices' ),
+						array( 'k' => 'contactpg_offices_h2', 'l' => 'Offices: heading', 'd' => 'Talk to the team' ),
+						array( 'k' => 'contactpg_hq_h4', 'l' => 'HQ: label', 'd' => 'Headquarters — Dubai' ),
+						array( 'k' => 'contactpg_hq_p', 'l' => 'HQ: address (HTML ok)', 'ta' => 1, 'd' => 'P316 The Binary Tower, 32 Marasi Drive, Business Bay, Dubai, United Arab Emirates<br>Tel: +971 4 5786 254 — Available 9:00 a.m. – 5:00 p.m. GST' ),
+						array( 'k' => 'contactpg_usa_h4', 'l' => 'USA office: label', 'd' => 'USA Office — Austin' ),
+						array( 'k' => 'contactpg_usa_p', 'l' => 'USA office: address', 'ta' => 1, 'd' => '3300 Bee Cave Rd, Suite 650 #1202, Austin, TX 78746, United States' ),
+					),
+				),
+
+				'page_pricing' => array(
+					'label'  => 'Page — Pricing',
+					'fields' => array(
+						array( 'k' => 'pricepg_eyebrow', 'l' => 'Hero eyebrow', 'd' => 'Pricing' ),
+						array( 'k' => 'pricepg_h1', 'l' => 'Hero headline (HTML ok)', 'ta' => 1, 'd' => "Simple <span class='g'>Monthly Plans</span>" ),
+						array( 'k' => 'pricepg_lead', 'l' => 'Hero paragraph', 'ta' => 1, 'd' => '1 credit = 1 receipt scan. No credit card required for starter plan.' ),
+						array( 'k' => 'pricepg_note', 'l' => 'Footnote under plans', 'ta' => 1, 'd' => 'Our enterprise plans are far less expensive than competitors like Amazon and Veryfi, at a fraction of a cent depending on volume.' ),
+						array( 'k' => 'pricepg_midcta_h2', 'l' => 'Closing CTA: heading', 'ta' => 1, 'd' => 'Free to use now' ),
+						array( 'k' => 'pricepg_midcta_h3', 'l' => 'Closing CTA: sub-heading', 'ta' => 1, 'd' => 'Start extracting receipt data from day 1. No credit card required for the starter plan.' ),
+					),
+				),
+
+				'page_usecases' => array(
+					'label'  => 'Pages — Use Cases (Loyalty / Market Research / Expense / Case Studies)',
+					'fields' => array(
+						// Loyalty Rewards
+						array( 'k' => 'loy_eyebrow', 'l' => 'Loyalty: hero eyebrow', 'd' => 'Loyalty Rewards' ),
+						array( 'k' => 'loy_h1', 'l' => 'Loyalty: hero headline (HTML ok)', 'ta' => 1, 'd' => "Receipt Processing API for <span class='g'>Loyalty Rewards</span>" ),
+						array( 'k' => 'loy_lead', 'l' => 'Loyalty: hero paragraph', 'ta' => 1, 'd' => 'Add first party data collection to your loyalty program. Existing customers upload a simple image of their receipt for proof of purchase validation. Our receipt processing API is developer-friendly, the most accurate, and reads all formats.' ),
+						array( 'k' => 'loy_midcta_h2', 'l' => 'Loyalty: closing CTA heading', 'ta' => 1, 'd' => 'Ready to raise engagement in your loyalty program with Tabscanner?' ),
+						array( 'k' => 'loy_midcta_h3', 'l' => 'Loyalty: closing CTA sub-heading', 'ta' => 1, 'd' => 'Plug into our automated receipt clearing API. To get your business software up and running with a faster and more reliable solution. Always secure and scaleable. Proven AI-powered accuracy.' ),
+						// Market Research
+						array( 'k' => 'mr_eyebrow', 'l' => 'Market Research: hero eyebrow', 'd' => 'Market Research' ),
+						array( 'k' => 'mr_h1', 'l' => 'Market Research: hero headline (HTML ok)', 'ta' => 1, 'd' => "Market Research Through <span class='g'>Receipt OCR</span>" ),
+						array( 'k' => 'mr_lead', 'l' => 'Market Research: hero paragraph', 'ta' => 1, 'd' => 'A fast and accurate AI trained to understand and extract labelled data from receipt images. Sign up and get 200 credits a month completely free!' ),
+						array( 'k' => 'mr_midcta_h2', 'l' => 'Market Research: closing CTA heading', 'ta' => 1, 'd' => 'Ready to start gathering insights with Tabscanner?' ),
+						array( 'k' => 'mr_midcta_h3', 'l' => 'Market Research: closing CTA sub-heading', 'ta' => 1, 'd' => 'Plug into our API and get your software up and running with a fast, accurate and reliable solution.' ),
+						// Expense Management
+						array( 'k' => 'exp_eyebrow', 'l' => 'Expense: hero eyebrow', 'd' => 'Expense Management' ),
+						array( 'k' => 'exp_h1', 'l' => 'Expense: hero headline (HTML ok)', 'ta' => 1, 'd' => "Expense Management with <span class='g'>OCR Technology</span>" ),
+						array( 'k' => 'exp_lead', 'l' => 'Expense: hero paragraph', 'ta' => 1, 'd' => 'Integrate the most accurate receipt OCR API into your expense management software. Allowing users to upload and extract receipt and invoice data. Supports all languages. Reliable cloud based data extraction in real time.' ),
+						array( 'k' => 'exp_midcta_h2', 'l' => 'Expense: closing CTA heading', 'ta' => 1, 'd' => 'Ready to power up your business expense software with Tabscanner?' ),
+						array( 'k' => 'exp_midcta_h3', 'l' => 'Expense: closing CTA sub-heading', 'ta' => 1, 'd' => 'Plug into our API and get your accounting software up and running with a fast, accurate and reliable solution.' ),
+						// Case Studies
+						array( 'k' => 'cs_eyebrow', 'l' => 'Case Studies: hero eyebrow', 'd' => 'Case Studies' ),
+						array( 'k' => 'cs_h1', 'l' => 'Case Studies: hero headline (HTML ok)', 'ta' => 1, 'd' => "Tabscanner <span class='g'>Case Studies</span>" ),
+						array( 'k' => 'cs_lead', 'l' => 'Case Studies: hero paragraph', 'ta' => 1, 'd' => "Insight into the power of the world's number 1 receipt parsing API. Information extraction from receipts using machine learning and deep learning AI. Faster, more accurate and better value than alternatives." ),
+						array( 'k' => 'cs_final_eyebrow', 'l' => 'Case Studies: closing eyebrow', 'd' => 'Get Started' ),
+						array( 'k' => 'cs_final_h2', 'l' => 'Case Studies: closing heading', 'ta' => 1, 'd' => 'Power your app with the most accurate Receipt OCR API' ),
+						array( 'k' => 'cs_final_p', 'l' => 'Case Studies: closing paragraph', 'ta' => 1, 'd' => 'Sign in with Google or sign up with email. No credit card is needed. It is quick and easy.' ),
+					),
+				),
+
 			),
-			// Map the front-page slug to the hero group (on-page panel convenience).
-			'slug_groups'   => array( 'home' => 'home_hero' ),
-			'slug_prefixes' => array(),
+			// On-page panel convenience: map each bespoke page slug to its fields.
+			'slug_groups'   => array(
+				'home'       => 'home_hero',
+				'contact-us' => 'page_contact',
+				'pricing'    => 'page_pricing',
+			),
+			'slug_prefixes' => array(
+				'loyalty-program-receipt-scanning'    => 'loy_',
+				'market-research-through-receipt-ocr' => 'mr_',
+				'ocr-expense-management'              => 'exp_',
+				'tabscanner-case-studies'             => 'cs_',
+			),
 		),
 
 		// ---- Editable IMAGES --------------------------------------------------

@@ -7,9 +7,9 @@ get_header(); ?>
 <section class="phero">
   <div class="dots"></div><div class="orb"></div>
   <div class="wrap in">
-    <span class="eyebrow">Loyalty Rewards</span>
-    <h1>Receipt Processing API for <span class="g">Loyalty Rewards</span></h1>
-    <p class="lead">Add first party data collection to your loyalty program. Existing customers upload a simple image of their receipt for proof of purchase validation. Our receipt processing API is developer-friendly, the most accurate, and reads all formats.</p>
+    <span class="eyebrow"><?php echo sc_text( 'loy_eyebrow' ); ?></span>
+    <h1><?php echo sc_text( 'loy_h1' ); ?></h1>
+    <p class="lead"><?php echo sc_text( 'loy_lead' ); ?></p>
     <div class="row">
       <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Test Drive The Uploader <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>
@@ -89,8 +89,8 @@ get_header(); ?>
 <section class="section">
   <div class="wrap">
     <div class="midcta">
-      <h2>Ready to raise engagement in your loyalty program with Tabscanner?</h2>
-      <h3>Plug into our automated receipt clearing API. To get your business software up and running with a faster and more reliable solution. Always secure and scaleable. Proven AI-powered accuracy.</h3>
+      <h2><?php echo sc_text( 'loy_midcta_h2' ); ?></h2>
+      <h3><?php echo sc_text( 'loy_midcta_h3' ); ?></h3>
       <div class="row">
         <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">Test Drive The Uploader <span class="arr">→</span></a>
         <a class="s" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">Schedule A Chat</a>
