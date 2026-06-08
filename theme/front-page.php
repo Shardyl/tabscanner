@@ -6,11 +6,11 @@
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
   <div class="wrap">
-    <div class="topbanner"><span>1 BILLION RECEIPTS PROCESSED GLOBALLY IN 9 YEARS</span></div>
+    <div class="topbanner"><span><?php echo sc_text( 'home_topbanner' ); ?></span></div>
     <div class="hero-grid">
       <div>
-        <h1>Receipt OCR <span class="g">API</span></h1>
-        <p class="lead">Get 99-99.99%+ accurate receipt data extraction at the industry's lowest cost. Reliable at any scale. Our synchronous, low-latency OCR engine offer immediate real-time structured data. Our demo is the only one with a timer so you can see for yourself our industry leading speed.</p>
+        <h1><?php echo sc_text( 'home_hero_h1' ); ?></h1>
+        <p class="lead"><?php echo sc_text( 'home_hero_lead' ); ?></p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Sign up with Email <span class="arr">→</span></a>
           <a class="btn btn-google btn-lg" href="https://dashboard.tabscanner.com/social-login/google"><svg class="gicon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Sign in with Google</a>
@@ -126,12 +126,12 @@
 <!-- CTA BAND -->
 <section class="section ctaband">
   <div class="wrap">
-    <span class="eyebrow">Receipt OCR · For teams already at scale</span>
-    <h2 class="ctaband-h">Processing receipts at volume,<br><span class="g">but accuracy is holding you back?</span></h2>
-    <p class="ctaband-p">You already have the receipt volume. What's costing you is the accuracy gap nobody else will close: the misreads that pile up at scale, drive manual review, and quietly erode trust in your product. Our team has tuned extraction across more than a billion receipts. Let's get yours to the next level.</p>
+    <span class="eyebrow"><?php echo sc_text( 'home_cta_eyebrow' ); ?></span>
+    <h2 class="ctaband-h"><?php echo sc_text( 'home_cta_h' ); ?></h2>
+    <p class="ctaband-p"><?php echo sc_text( 'home_cta_p' ); ?></p>
     <div class="ctaband-cta">
-      <button type="button" class="btn btn-primary btn-lg js-contact-open">Book a consultation <span class="arr">→</span></button>
-      <a class="btn btn-ghost btn-lg" href="#demo">See it on your receipts</a>
+      <button type="button" class="btn btn-primary btn-lg js-contact-open"><?php echo sc_text( 'home_cta_btn1' ); ?> <span class="arr">→</span></button>
+      <a class="btn btn-ghost btn-lg" href="#demo"><?php echo sc_text( 'home_cta_btn2' ); ?></a>
     </div>
   </div>
 </section>
@@ -139,10 +139,10 @@
 <!-- INTRO -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Real-Time Receipt OCR</span><h2>Real-Time Receipt OCR API Engineered to Understand Every Format and Language</h2></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'home_intro_eyebrow' ); ?></span><h2><?php echo sc_text( 'home_intro_h2' ); ?></h2></div>
     <div class="intro-copy">
-      <p>Extract receipt data from images with <strong>unbeatable security</strong>. Optimizing your budget at a <strong>fraction of the cost</strong>. Trusted by major global enterprises and developers. Tabscanner offers seamless integration, no downtime, plus automated receipt parsing you can truly rely on anywhere in the world.</p>
-      <p>Launch loyalty program software and apps backed by our <strong>dedicated customer service team</strong>, committed to your success. Now you can capture all buyer data with the best chance of customer retention. Plus expense management software free from privacy concerns. Built-in <strong>advanced fraud and tamper detection</strong>.</p>
+      <p><?php echo sc_text( 'home_intro_p1' ); ?></p>
+      <p><?php echo sc_text( 'home_intro_p2' ); ?></p>
     </div>
   </div>
 </section>
@@ -371,7 +371,7 @@
 <!-- USE CASES -->
 <section class="section" id="usecases" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Use Cases</span><h2>From expense management to loyalty rewards</h2><p>Tabscanner API led the way with early adoption of concepts like document understanding through AI and contextual field validation. Common use cases include OCR for accounting software, expense management, loyalty programs, delivery, retail and many more. Get in touch if you would like a chat to learn how we can help with your next project.</p></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'home_uc_eyebrow' ); ?></span><h2><?php echo sc_text( 'home_uc_h2' ); ?></h2><p><?php echo sc_text( 'home_uc_p' ); ?></p></div>
     <div class="uc">
       <div class="card rv">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.8L3 8.9 9 8z"/></svg></div>
