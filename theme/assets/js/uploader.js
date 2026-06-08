@@ -99,4 +99,34 @@
     statusT.textContent = 'Error';
     errBox.textContent = msg || 'Something went wrong.';
   }
+
+  // ----- contact modal -----
+  var modal = document.getElementById('contactModal');
+  var openC = document.getElementById('uplContact');
+  var closeC = document.getElementById('contactClose');
+  function openModal() { if (modal) { modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); } }
+  function closeModal() { if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); } }
+  if (openC) openC.addEventListener('click', openModal);
+  if (closeC) closeC.addEventListener('click', closeModal);
+  if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  var cform = document.getElementById('contactModalForm');
+  if (cform) {
+    cform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = document.getElementById('contactModalNote');
+      var btn = cform.querySelector('button[type=submit]');
+      btn.disabled = true; note.className = 'formnote'; note.textContent = 'Sending…';
+      var data = { name: cform.name.value, email: cform.email.value, message: cform.message.value, website: cform.website.value };
+      fetch((cfg.base || '/wp-json/tabscanner/v1/') + 'enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok && res.j.ok) { note.className = 'formnote ok'; note.textContent = "Thanks — your message has been sent. We'll be in touch shortly."; cform.reset(); }
+          else { note.className = 'formnote err'; note.textContent = (res.j && res.j.error) || 'Sorry, something went wrong. Please email api@tabscanner.com.'; }
+        })
+        .catch(function () { note.className = 'formnote err'; note.textContent = 'Sorry, something went wrong.'; })
+        .finally(function () { btn.disabled = false; });
+    });
+  }
 })();

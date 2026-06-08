@@ -12,13 +12,8 @@
         <h1>Receipt OCR <span class="g">API</span></h1>
         <p class="lead">Get 99-99.99%+ accurate receipt data extraction at the industry's lowest cost. Reliable at any scale. Our synchronous, low-latency OCR engine offer immediate real-time structured data. Our demo is the only one with a timer so you can see for yourself our industry leading speed.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary btn-lg" href="#demo">RUN LIVE SPEED TEST <span class="arr">→</span></a>
-          <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">FREE TO USE NOW</a>
-        </div>
-        <div class="altrow">
-          <span class="or">or</span>
-          <a class="s" href="https://dashboard.tabscanner.com/social-login/google">Sign in with Google</a>
-          <a class="s" href="https://dashboard.tabscanner.com/register">Sign up with Email</a>
+          <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">Sign up with Email <span class="arr">→</span></a>
+          <a class="btn btn-google btn-lg" href="https://dashboard.tabscanner.com/social-login/google"><svg class="gicon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Sign in with Google</a>
         </div>
         <p class="fine">Already have an account? <a href="https://dashboard.tabscanner.com/login">Log in</a>. No card required for free plan.</p>
         <div class="aichips">
@@ -51,7 +46,11 @@
               <div class="upl-status"><span class="sp"></span><span class="t" id="uplStatusT">Reading receipt…</span><span class="tm" id="uplTimer">0.0s</span></div>
               <div class="upl-result" id="uplResult"></div>
               <div class="upl-err" id="uplErr"></div>
-              <button type="button" class="upl-again" id="uplAgain">↺ Try another receipt</button>
+              <div class="upl-cta">
+                <div class="upl-hi" id="uplHi">Need higher accuracy?</div>
+                <button type="button" class="upl-contactbtn" id="uplContact">Get in touch with the team <span class="arr">→</span></button>
+                <button type="button" class="upl-again" id="uplAgain">↺ Scan another receipt</button>
+              </div>
             </div>
           </div>
         </div>
@@ -469,4 +468,23 @@
     </div>
   </div>
 </section>
+
+<!-- Contact modal -->
+<div class="modal-ov" id="contactModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Contact the team">
+    <button class="modal-close" id="contactClose" aria-label="Close">&times;</button>
+    <span class="eyebrow">Get in touch</span>
+    <h3>Talk to the team</h3>
+    <p class="sub">Need higher accuracy, enterprise volume, or custom regional configs? Tell us about your project and we'll get back to you fast.</p>
+    <form class="cform" id="contactModalForm">
+      <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
+      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@company.com"></div>
+      <div class="field"><label>Message</label><textarea name="message" required placeholder="Tell us about your use case"></textarea></div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">SEND MESSAGE</button>
+      <div class="formnote" id="contactModalNote" role="status"></div>
+    </form>
+  </div>
+</div>
+
 <?php get_footer(); ?>
