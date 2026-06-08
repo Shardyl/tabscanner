@@ -37,44 +37,29 @@
 
       <div class="scan" id="demo">
         <div class="scan-top"><i></i><i></i><i></i><span>POST api.tabscanner.com/process</span><span class="modelbadge">tabscanner-ocr · v9</span></div>
-        <div class="scan-body">
-          <div class="receipt detect">
-            <div class="scanline"></div>
-            <div class="dbox b1"><span class="tag">MERCHANT</span><span class="conf">99.9%</span></div>
-            <div class="dbox b2"><span class="tag">LINE_ITEM</span><span class="conf">99.7%</span></div>
-            <div class="dbox b3"><span class="tag">TOTAL</span><span class="conf">100%</span></div>
-            <h5>WHOLE FOODS MKT</h5>
-            <div class="ctr">Marasi Drive · Dubai</div>
-            <div class="row"><span>Oat Milk</span><span>14.50</span></div>
-            <div class="row"><span>Avocado x3</span><span>11.25</span></div>
-            <div class="row"><span>Sourdough</span><span>9.00</span></div>
-            <div class="row"><span>Cold Brew</span><span>18.75</span></div>
-            <div class="dash"></div>
-            <div class="row"><span>Subtotal</span><span>53.50</span></div>
-            <div class="row"><span>VAT 5%</span><span>2.68</span></div>
-            <div class="dash"></div>
-            <div class="row tot"><span>TOTAL</span><span>AED 56.18</span></div>
+        <div class="upl">
+          <div class="upl-idle">
+            <div class="upl-drop" id="uplDrop">
+              <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></div>
+              <h4>Drop a receipt to try it live</h4>
+              <p>or <span class="browse">choose a file</span> · JPG / PNG</p>
+            </div>
           </div>
-          <div class="json">
-<span class="p">{</span>
-  <span class="k">"merchant"</span>: <span class="s">"Whole Foods Mkt"</span>,
-  <span class="k">"date"</span>: <span class="s">"2026-06-06"</span>,
-  <span class="k">"currency"</span>: <span class="s">"AED"</span>,
-  <span class="k">"lineItems"</span>: <span class="p">[</span>
-    <span class="p">{</span> <span class="k">"desc"</span>:<span class="s">"Oat Milk"</span>, <span class="k">"qty"</span>:<span class="n">1</span> <span class="p">}</span>,
-    <span class="p">{</span> <span class="k">"desc"</span>:<span class="s">"Avocado"</span>, <span class="k">"qty"</span>:<span class="n">3</span> <span class="p">}</span>
-  <span class="p">]</span>,
-  <span class="k">"subtotal"</span>: <span class="n">53.50</span>,
-  <span class="k">"total"</span>: <span class="n">56.18</span>
-<span class="p">}</span>
+          <div class="upl-work">
+            <div class="upl-thumb"><img id="uplThumb" alt="receipt"><div class="scanline"></div></div>
+            <div class="upl-panel">
+              <div class="upl-status"><span class="sp"></span><span class="t" id="uplStatusT">Reading receipt…</span><span class="tm" id="uplTimer">0.0s</span></div>
+              <div class="upl-result" id="uplResult"></div>
+              <div class="upl-err" id="uplErr"></div>
+              <button type="button" class="upl-again" id="uplAgain">↺ Try another receipt</button>
+            </div>
           </div>
         </div>
-        <div class="procbar"><span></span></div>
+        <input type="file" id="uplFile" accept="image/jpeg,image/png" hidden>
         <div class="scan-foot">
-          <div class="uploader"><span class="up">＋</span> Choose File or Take a Photo</div>
-          <span class="ptime">Processing Time · 0.84s</span>
+          <div class="uploader" id="uplFootBtn"><span class="up">＋</span> Choose File or Take a Photo</div>
+          <span class="ptime">Live demo · real API</span>
         </div>
-        <div class="batchnote">Upload up to 20 receipts simultaneously with our batch uploader to see our full performance and accuracy</div>
       </div>
     </div>
   </div>

@@ -21,6 +21,15 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	// Interactions (footer)
 	wp_enqueue_script( 'tabscanner-app', $uri . '/assets/js/app.js', array(), $v, true );
+
+	// Live hero uploader (homepage only) — talks to the server-side proxy
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'tabscanner-uploader', $uri . '/assets/js/uploader.js', array(), $v, true );
+		wp_localize_script( 'tabscanner-uploader', 'TS_DEMO', array(
+			'base'     => esc_url_raw( rest_url( 'tabscanner/v1/' ) ),
+			'register' => 'https://dashboard.tabscanner.com/register',
+		) );
+	}
 }, 20 );
 
 // Strip Kadence/Genesis global styles — Tabscanner ships its own complete design.

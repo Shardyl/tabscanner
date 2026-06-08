@@ -22,3 +22,9 @@
 - Design system in `assets/css/app.css` + `assets/js/app.js` (neural hero, detection card, counters, tabs, FAQ).
 - GitHub Actions rsync deploy to WP Engine install `tabscanner`.
 - mu-plugins placeholder; legal/blog/use-case pages to follow.
+
+## 0.4.0 — 2026-06-07
+- Live receipt-OCR uploader embedded in the hero (replaces the static scan card). Real Tabscanner API
+  via a server-side REST proxy (`tabscanner/v1/demo-process` + `demo-result/{token}`); API key stored
+  in the `tabscanner_demo_api_key` WP option (never in repo / never sent to the browser). Per-IP rate
+  limit (8/hr), file validation, and result gating (total + 2 line-items, full breakdown behind signup).
