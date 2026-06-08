@@ -35,23 +35,44 @@
   file.addEventListener('change', function (e) { if (e.target.files[0]) start(e.target.files[0]); });
   if (again) again.addEventListener('click', function () { setState(''); file.value = ''; });
 
+  // Shrink big phone photos before upload — faster transfer, faster + more accurate OCR.
+  function resizeImage(file, maxDim) {
+    return new Promise(function (resolve) {
+      try {
+        var img = new Image();
+        img.onload = function () {
+          var w = img.width, h = img.height;
+          if (!w || !h || Math.max(w, h) <= maxDim) { resolve(file); return; }
+          var s = maxDim / Math.max(w, h);
+          var c = document.createElement('canvas');
+          c.width = Math.round(w * s); c.height = Math.round(h * s);
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          if (c.toBlob) { c.toBlob(function (b) { resolve(b && b.size ? b : file); }, 'image/jpeg', 0.85); }
+          else { resolve(file); }
+        };
+        img.onerror = function () { resolve(file); };
+        img.src = URL.createObjectURL(file);
+      } catch (e) { resolve(file); }
+    });
+  }
+
   function start(f) {
     if (!/image\/(jpeg|png)/.test(f.type)) { alert('Please choose a JPG or PNG.'); return; }
     setState('busy'); errBox.textContent = ''; result.innerHTML = '';
     thumb.src = URL.createObjectURL(f);
-    statusT.textContent = 'Uploading…';
+    statusT.textContent = 'Optimising image…';
     t0 = performance.now(); clearInterval(ti);
     ti = setInterval(function () { timerEl.textContent = fmt(performance.now() - t0); }, 50);
-    var fd = new FormData(); fd.append('file', f);
-    fetch(base + 'demo-process', { method: 'POST', body: fd })
-      .then(function (r) { return r.json(); })
-      .then(function (pr) {
-        if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || 'Upload failed.'); }
-        statusT.textContent = 'Reading receipt with AI…';
-        return poll(pr.token);
-      })
-      .then(done)
-      .catch(function (e) { fail(e.message); });
+    resizeImage(f, 2000).then(function (blob) {
+      statusT.textContent = 'Uploading…';
+      var fd = new FormData();
+      fd.append('file', blob, 'receipt.jpg');
+      return fetch(base + 'demo-process', { method: 'POST', body: fd }).then(function (r) { return r.json(); });
+    }).then(function (pr) {
+      if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || 'Upload failed.'); }
+      statusT.textContent = 'Reading receipt with AI…';
+      return poll(pr.token);
+    }).then(done).catch(function (e) { fail(e.message); });
   }
 
   function poll(token) {
@@ -64,7 +85,7 @@
             .then(function (r) {
               if (r.status === 'done') return resolve(r);
               if (r.status === 'failed') return reject(new Error('Could not read that receipt — try a clearer, straight-on photo.'));
-              if (++n > 25) return reject(new Error('Timed out. Please try again.'));
+              if (++n > 50) return reject(new Error('That receipt is taking unusually long — please try again, or get in touch and we can help.'));
               tick();
             })
             .catch(reject);
