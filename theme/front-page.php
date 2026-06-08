@@ -96,7 +96,7 @@
               <div class="upl-err" id="uplErr"></div>
               <div class="upl-cta">
                 <div class="upl-hi" id="uplHi">Need higher accuracy?</div>
-                <button type="button" class="upl-contactbtn" id="uplContact">Get in touch with the team <span class="arr">→</span></button>
+                <button type="button" class="upl-contactbtn js-contact-open" id="uplContact">Get in touch with the team <span class="arr">→</span></button>
                 <button type="button" class="upl-again" id="uplAgain">↺ Scan another receipt</button>
               </div>
             </div>
@@ -122,6 +122,19 @@
     </div>
   </div>
 </div>
+
+<!-- CTA BAND -->
+<section class="section ctaband">
+  <div class="wrap">
+    <span class="eyebrow">Receipt OCR · For teams already at scale</span>
+    <h2 class="ctaband-h">Processing receipts at volume,<br><span class="g">but accuracy is holding you back?</span></h2>
+    <p class="ctaband-p">You already have the receipt volume. What's costing you is the accuracy gap nobody else will close: the misreads that pile up at scale, drive manual review, and quietly erode trust in your product. Our team has tuned extraction across more than a billion receipts. Let's get yours to the next level.</p>
+    <div class="ctaband-cta">
+      <button type="button" class="btn btn-primary btn-lg js-contact-open">Book a consultation <span class="arr">→</span></button>
+      <a class="btn btn-ghost btn-lg" href="#demo">See it on your receipts</a>
+    </div>
+  </div>
+</section>
 
 <!-- INTRO -->
 <section class="section">

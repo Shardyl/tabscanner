@@ -125,11 +125,10 @@
 
   // ----- contact modal -----
   var modal = document.getElementById('contactModal');
-  var openC = document.getElementById('uplContact');
   var closeC = document.getElementById('contactClose');
   function openModal() { if (modal) { modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); } }
   function closeModal() { if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); } }
-  if (openC) openC.addEventListener('click', openModal);
+  Array.prototype.forEach.call(document.querySelectorAll('.js-contact-open'), function (b) { b.addEventListener('click', openModal); });
   if (closeC) closeC.addEventListener('click', closeModal);
   if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
