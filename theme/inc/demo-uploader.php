@@ -101,3 +101,43 @@ function tabscanner_demo_result( WP_REST_Request $req ) {
 	}
 	return new WP_REST_Response( array( 'status' => $data['status'] ?? 'pending' ), 200 );
 }
+
+/* -------- Admin: Settings → Tabscanner Demo (rotate the API key) -------- */
+add_action( 'admin_init', function () {
+	register_setting( 'tabscanner_demo', 'tabscanner_demo_api_key', array(
+		'type'              => 'string',
+		'show_in_rest'      => false,
+		'sanitize_callback' => function ( $v ) {
+			$v = sanitize_text_field( $v );
+			return $v !== '' ? $v : (string) get_option( 'tabscanner_demo_api_key', '' ); // empty = keep current
+		},
+	) );
+} );
+
+add_action( 'admin_menu', function () {
+	add_options_page( 'Tabscanner Demo', 'Tabscanner Demo', 'manage_options', 'tabscanner-demo', 'tabscanner_demo_settings_page' );
+} );
+
+function tabscanner_demo_settings_page() {
+	if ( ! current_user_can( 'manage_options' ) ) { return; }
+	$key    = trim( (string) get_option( 'tabscanner_demo_api_key', '' ) );
+	$masked = $key ? ( str_repeat( '•', max( 0, strlen( $key ) - 4 ) ) . substr( $key, -4 ) ) : '— not set —';
+	?>
+	<div class="wrap">
+		<h1>Tabscanner Demo</h1>
+		<p>API key for the homepage live receipt-OCR uploader. Stored server-side only — it is never sent to the browser or committed to the repo.</p>
+		<p><strong>Current key:</strong> <code><?php echo esc_html( $masked ); ?></code></p>
+		<form method="post" action="options.php">
+			<?php settings_fields( 'tabscanner_demo' ); ?>
+			<table class="form-table"><tr>
+				<th scope="row"><label for="ts_demo_key">New API key</label></th>
+				<td>
+					<input type="password" id="ts_demo_key" name="tabscanner_demo_api_key" value="" class="regular-text" autocomplete="off" placeholder="Paste a new key to rotate">
+					<p class="description">Paste a new key to replace the current one. Leave blank to keep the existing key. Rotate this whenever you regenerate the key in your Tabscanner dashboard.</p>
+				</td>
+			</tr></table>
+			<?php submit_button( 'Save key' ); ?>
+		</form>
+	</div>
+	<?php
+}
