@@ -30,6 +30,7 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'home_topbanner', 'l' => 'Top banner strip', 'ta' => 1, 'd' => '1 BILLION RECEIPTS PROCESSED GLOBALLY IN 9 YEARS' ),
 						array( 'k' => 'home_hero_h1',   'l' => 'Hero headline (HTML ok)', 'ta' => 1, 'd' => "Receipt OCR <span class='g'>API</span>" ),
 						array( 'k' => 'home_hero_lead', 'l' => 'Hero paragraph', 'ta' => 1, 'd' => "Get 99-99.99%+ accurate receipt data extraction at the industry's lowest cost. Reliable at any scale. Our synchronous, low-latency OCR engine offer immediate real-time structured data. Our demo is the only one with a timer so you can see for yourself our industry leading speed." ),
+						array( 'k' => 'home_hero_btn', 'l' => 'Hero button label', 'd' => 'Book a consultation' ),
 					),
 				),
 
