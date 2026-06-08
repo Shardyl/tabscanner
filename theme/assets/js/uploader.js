@@ -80,7 +80,7 @@
       var n = 0;
       (function tick() {
         setTimeout(function () {
-          fetch(base + 'demo-result/' + encodeURIComponent(token))
+          fetch(base + 'demo-result/' + encodeURIComponent(token) + '?_=' + Date.now(), { cache: 'no-store' })
             .then(function (r) { return r.json(); })
             .then(function (r) {
               if (r.status === 'done') return resolve(r);

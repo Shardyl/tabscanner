@@ -36,6 +36,16 @@ add_action( 'rest_api_init', function () {
 	) );
 } );
 
+// Never let WP Engine / Cloudflare cache the demo endpoints — poll responses must always be fresh.
+add_filter( 'rest_post_dispatch', function ( $response, $server, $request ) {
+	if ( strpos( (string) $request->get_route(), '/tabscanner/v1/demo' ) === 0 && $response instanceof WP_REST_Response ) {
+		$response->header( 'Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0' );
+		$response->header( 'Pragma', 'no-cache' );
+		$response->header( 'X-Accel-Expires', '0' );
+	}
+	return $response;
+}, 10, 3 );
+
 function tabscanner_demo_process( WP_REST_Request $req ) {
 	if ( ! tabscanner_demo_key() ) { return new WP_REST_Response( array( 'success' => false, 'message' => 'Demo is not configured yet.' ), 200 ); }
 	if ( ! tabscanner_demo_under_limit() ) { return new WP_REST_Response( array( 'success' => false, 'limited' => true, 'message' => "You've reached the live-demo limit. Create a free account to keep scanning." ), 200 ); }
