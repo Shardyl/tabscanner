@@ -14,7 +14,7 @@
   var result = document.getElementById('uplResult');
   var errBox = document.getElementById('uplErr');
   var again = document.getElementById('uplAgain');
-  var t0 = 0, ti = null;
+  var t0 = 0, ti = null, uploadMs = 0;
 
   function fmt(ms) { return (ms / 1000).toFixed(1) + 's'; }
   function money(v) { return (v == null || v === '') ? '—' : Number(v).toFixed(2); }
@@ -61,6 +61,8 @@
     setState('busy'); errBox.textContent = ''; result.innerHTML = '';
     thumb.src = URL.createObjectURL(f);
     statusT.textContent = 'Optimising image…';
+    // Phase 1: time the upload (image prep + transfer to the API).
+    uploadMs = 0;
     t0 = performance.now(); clearInterval(ti);
     ti = setInterval(function () { timerEl.textContent = fmt(performance.now() - t0); }, 50);
     resizeImage(f, 2000).then(function (blob) {
@@ -72,6 +74,9 @@
       return fetch(base + 'demo-process', { method: 'POST', body: fd }).then(function (r) { return r.json(); });
     }).then(function (pr) {
       if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || 'Upload failed.'); }
+      // Upload finished — lock the upload time, then RESET the timer so it measures ONLY processing.
+      uploadMs = performance.now() - t0;
+      t0 = performance.now();
       statusT.textContent = 'Reading receipt with AI…';
       return poll(pr.token);
     }).then(done).catch(function (e) { fail(e.message); });
@@ -87,17 +92,19 @@
             .then(function (r) {
               if (r.status === 'done') return resolve(r);
               if (r.status === 'failed') return reject(new Error('Could not read that receipt — try a clearer, straight-on photo.'));
-              if (++n > 50) return reject(new Error('That receipt is taking unusually long — please try again, or get in touch and we can help.'));
+              if (++n > 70) return reject(new Error('That receipt is taking unusually long — please try again, or get in touch and we can help.'));
               tick();
             })
             .catch(reject);
-        }, 900);
+        }, 500);
       })();
     });
   }
 
   function done(r) {
     clearInterval(ti); setState('done');
+    var procMs = performance.now() - t0;          // processing-only time (upload already excluded)
+    timerEl.textContent = fmt(procMs);            // final headline time = processing time only
     var res = r.result || {};
     var conf = res.totalConfidence != null ? (' · ' + Math.round(res.totalConfidence * 100) + '%') : '';
     statusT.innerHTML = '<span class="badge-ok">Parsed' + conf + '</span>';
@@ -105,15 +112,13 @@
     var meta = [res.date || '', res.currency || ''].filter(Boolean).map(esc).join('  ·  ');
     if (meta) h += '<div class="upl-meta">' + meta + '</div>';
     (res.lineItems || []).forEach(function (li) {
-      h += '<div class="upl-row"><span>' + esc(li.descClean || 'Item') + '</span><span>' + money(li.lineTotal) + '</span></div>';
+      var q = (li.qty != null && Number(li.qty) > 1) ? '<span class="upl-q">' + esc(li.qty) + '×</span> ' : '';
+      h += '<div class="upl-row"><span>' + q + esc(li.descClean || 'Item') + '</span><span>' + money(li.lineTotal) + '</span></div>';
     });
     if (res.subTotal != null) h += '<div class="upl-row"><span>Subtotal</span><span>' + money(res.subTotal) + '</span></div>';
     if (res.tax != null) h += '<div class="upl-row"><span>Tax</span><span>' + money(res.tax) + '</span></div>';
     h += '<div class="upl-row tot"><span>TOTAL</span><span>' + money(res.total) + '</span></div>';
-    if (res.gated) {
-      var more = (res.lineItemCount || 0) - (res.lineItems || []).length;
-      h += '<div class="upl-gate"><p>+ ' + more + ' more line items extracted. Create a free account to unlock the full breakdown.</p><a href="' + register + '">Get the full result, free →</a></div>';
-    }
+    h += '<div class="upl-timing">Upload ' + fmt(uploadMs) + '  ·  Processing <b>' + fmt(procMs) + '</b></div>';
     result.innerHTML = h;
   }
 

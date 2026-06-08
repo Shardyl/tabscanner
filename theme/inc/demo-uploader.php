@@ -96,10 +96,10 @@ function tabscanner_demo_result( WP_REST_Request $req ) {
 		$r     = $data['result'];
 		$items = isset( $r['lineItems'] ) && is_array( $r['lineItems'] ) ? $r['lineItems'] : array();
 		$shown = array();
-		foreach ( array_slice( $items, 0, 2 ) as $li ) {
-			$shown[] = array( 'descClean' => $li['descClean'] ?? ( $li['desc'] ?? 'Item' ), 'lineTotal' => $li['lineTotal'] ?? null );
+		foreach ( $items as $li ) {
+			$shown[] = array( 'descClean' => $li['descClean'] ?? ( $li['desc'] ?? 'Item' ), 'qty' => $li['qty'] ?? null, 'lineTotal' => $li['lineTotal'] ?? null );
 		}
-		// GATED payload — full breakdown is behind signup
+		// Full result — the complete breakdown, no gating.
 		$out = array(
 			'establishment'   => $r['establishment'] ?? null,
 			'date'            => $r['date'] ?? null,
@@ -109,8 +109,6 @@ function tabscanner_demo_result( WP_REST_Request $req ) {
 			'tax'             => $r['tax'] ?? null,
 			'totalConfidence' => $r['totalConfidence'] ?? null,
 			'lineItems'       => $shown,
-			'lineItemCount'   => count( $items ),
-			'gated'           => count( $items ) > count( $shown ),
 		);
 		return new WP_REST_Response( array( 'status' => 'done', 'result' => $out ), 200 );
 	}
