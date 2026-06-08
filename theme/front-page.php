@@ -37,7 +37,7 @@
             <div class="upl-region">
               <label for="uplRegion">Receipt region</label>
               <select id="uplRegion">
-                <option value="">Auto-detect</option>
+                <option value="">Select your region</option>
                 <option value="AR">Argentina</option>
                 <option value="AU">Australia</option>
                 <option value="BE">Belgium</option>
