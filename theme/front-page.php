@@ -150,7 +150,7 @@
 <!-- ACCURACY TABS: The Only Receipt Parser API with 99.99% Accuracy -->
 <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Receipt Extraction with Advanced AI-Driven OCR</span><h2>The Only Receipt Parser API with 99.99% Accuracy</h2></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'acc_eyebrow' ); ?></span><h2><?php echo sc_text( 'acc_h2' ); ?></h2></div>
     <div class="tabs">
       <div class="tabnav" data-group="acc">
         <button class="on" data-t="a1">Advanced AI-Driven OCR</button>
@@ -207,7 +207,7 @@
 <!-- COMPARISON -->
 <section class="section" id="features">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Receipt OCR API Comparisons</span><h2>Receipt OCR API Comparisons</h2><p>The chart above compares speed and accuracy claims by the 4 most visible specialists.</p></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'cmp_eyebrow' ); ?></span><h2><?php echo sc_text( 'cmp_h2' ); ?></h2><p><?php echo sc_text( 'cmp_p' ); ?></p></div>
     <div class="compare">
       <div class="chartcard">
         <div class="ttl">Receipt OCR accuracy — illustrative</div>
@@ -229,8 +229,8 @@
 <!-- PRICING -->
 <section class="section" id="pricing" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Ultra Fast Receipt Reader API</span><h2>Monthly Plans</h2></div>
-    <p class="price-sub">1 credit = 1 receipt scan. No credit card required for starter plan.</p>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'price_eyebrow' ); ?></span><h2><?php echo sc_text( 'price_h2' ); ?></h2></div>
+    <p class="price-sub"><?php echo sc_text( 'price_sub' ); ?></p>
     <div class="price-grid">
       <div class="plan rv">
         <div class="name">Starter</div><div class="tagline">integrate and test</div>
@@ -296,8 +296,8 @@
     <div class="dev">
       <div class="orb orbd"></div>
       <div>
-        <span class="eyebrow">Receipt Parsing API</span>
-        <h2>Complex AI Simple API</h2>
+        <span class="eyebrow"><?php echo sc_text( 'api_eyebrow' ); ?></span>
+        <h2><?php echo sc_text( 'api_h2' ); ?></h2>
         <p>Our receipt API scans images and runs them through smart AI models. It also uses special tools to clean up the images first. We test our data often so you always get fast and accurate results.</p>
         <p>Everything comes in a simple OCR receipt API that's easy to use. It's built for app developers to plug in, test, and improve. Below is a quick example of the JSON response.</p>
       </div>
@@ -321,7 +321,7 @@
 <!-- KEY FEATURES -->
 <section class="section" id="keyfeatures" style="background:var(--bg-2);border-top:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Why Tabscanner</span><h2>Key Features of the Tabscanner Receipt OCR Software</h2></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'kf_eyebrow' ); ?></span><h2><?php echo sc_text( 'kf_h2' ); ?></h2></div>
     <div class="kf">
       <div class="card rv">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.8L3 8.9 9 8z"/></svg></div>
@@ -355,8 +355,8 @@
 <section class="section">
   <div class="wrap">
     <div class="midcta">
-      <h2>Ready to power up your software with Tabscanner's Receipt API?</h2>
-      <h3>Plug into our receipt scanner OCR and get your software up and running with the most advanced IDP API.</h3>
+      <h2><?php echo sc_text( 'midcta_h2' ); ?></h2>
+      <h3><?php echo sc_text( 'midcta_h3' ); ?></h3>
       <div class="row">
         <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">TEST DRIVE THE UPLOADER <span class="arr">→</span></a>
         <span class="or">or</span>
@@ -398,7 +398,7 @@
 <!-- INSIGHTS -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Advanced AI OCR</span><h2>Receipt Scanner API Insights</h2><p>Resources for the Tabscanner API. Delve deeper into our AI OCR development. Layout-aware pipeline and receipt understanding. Plus tutorials for different code languages. How we guarantee real time processing. Why a POS receipts specialist is ideal for supermarket CPG brands.</p></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'insights_eyebrow' ); ?></span><h2><?php echo sc_text( 'insights_h2' ); ?></h2><p><?php echo sc_text( 'insights_p' ); ?></p></div>
     <div class="res">
       <a class="card rv" href="<?php echo esc_url(home_url('/faq/')); ?>"><div class="thumb"></div><div class="body"><h4>Tabscanner API FAQ</h4><p>Frequently Asked Questions about the Tabscanner API. This post is...</p></div></a>
       <a class="card rv" href="<?php echo esc_url(home_url('/tabscanner-comparisons-vs-top-receipt-ocr/')); ?>"><div class="thumb"></div><div class="body"><h4>Tabscanner Comparison Vs the Receipt OCR API Top Tier by AI</h4><p>This comparison was carried out after the spring 2025...</p></div></a>
@@ -410,7 +410,7 @@
 <!-- TESTIMONIALS -->
 <section class="section tsec" id="reviews">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">Tabscanner Reviews</span><h2>What our customers have to say about the Tabscanner API</h2></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'reviews_eyebrow' ); ?></span><h2><?php echo sc_text( 'reviews_h2' ); ?></h2></div>
     <div class="tgrid">
       <div class="quote rv"><div class="stars">★★★★★</div><p>"Tabscanner has provided us with a comprehensive and scalable solution to provide automated data extraction from receipts within our core application. We were able to launch the integration within a number of weeks due to Tabscanner's simple to use API and quick response times from the support team"</p><div class="who"><div class="av">CG</div><div><b>Chris Gregg</b><span>CEO, Lightyear</span></div></div></div>
       <div class="quote rv"><div class="stars">★★★★★</div><p>"Integrating this OCR API boosted our program's user engagement. Members love the easy upload process, and we're seeing increased participation rates."</p><div class="who"><div class="av">JD</div><div><b>James Dunn</b><span>Loyalty Analytics Manager, Loyalty Collinson</span></div></div></div>
@@ -425,9 +425,9 @@
   <div class="wrap">
     <div class="contact">
       <div>
-        <span class="eyebrow">Let's Chat</span>
-        <h2 style="font-size:36px;margin-bottom:16px">Let's Chat</h2>
-        <p style="font-size:17px;color:var(--muted)">Just send a message or call, and we will be happy to set up a meeting to answer any questions or concerns. Our team will get back to you quickly.</p>
+        <span class="eyebrow"><?php echo sc_text( 'contact_eyebrow' ); ?></span>
+        <h2 style="font-size:36px;margin-bottom:16px"><?php echo sc_text( 'contact_h2' ); ?></h2>
+        <p style="font-size:17px;color:var(--muted)"><?php echo sc_text( 'contact_p' ); ?></p>
       </div>
       <form class="cform" onsubmit="return false">
         <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
@@ -442,7 +442,7 @@
 <!-- WHAT IS RECEIPT OCR + STAGES -->
 <section class="section" id="faq" style="background:var(--bg-2);border-top:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">What Is Receipt OCR</span><h2>WHAT IS RECEIPT OCR (Optical Character Recognition)?</h2></div>
+    <div class="section-head"><span class="eyebrow"><?php echo sc_text( 'faq_eyebrow' ); ?></span><h2><?php echo sc_text( 'faq_h2' ); ?></h2></div>
     <div class="def">
       <h4>Receipt data extraction from image files</h4>
       <p>Receipt OCR technology in 2026 uses transformer-based AI models to automatically read printed and handwritten text on receipts, converting them into structured, machine-readable data. Advanced deep learning algorithms identify, classify, and extract key information. Including merchant names, transaction dates, itemized line items, tax amounts, payment methods, and total values. This technology powers automated expense management, real-time loyalty program validation, financial reporting workflows, and audit-ready data collection across industries.</p>
@@ -496,21 +496,21 @@
   <div class="wrap">
     <div class="about">
       <div class="orb orba"></div>
-      <span class="eyebrow">About Tabscanner</span>
-      <h3>About Tabscanner</h3>
+      <span class="eyebrow"><?php echo sc_text( 'about_eyebrow' ); ?></span>
+      <h3><?php echo sc_text( 'about_h3' ); ?></h3>
       <p style="color:#A8BFD4;position:relative;z-index:1">Tabscanner Information:</p>
       <div class="infogrid">
-        <div class="info"><div class="k">Service Area</div><div class="v">Worldwide</div></div>
-        <div class="info"><div class="k">Business Locations</div><div class="v">HQ in Dubai. Offices in Texas and Tokyo.</div></div>
-        <div class="info"><div class="k">Founded Date</div><div class="v">1 December 2016.</div></div>
-        <div class="info"><div class="k">Specialist in</div><div class="v">AI-powered Receipt OCR to automate expense data extraction and eliminate data entry.</div></div>
-        <div class="info"><div class="k">Main Product</div><div class="v">Receipt Parsing API &amp; IDP: Convert receipt images into structured JSON data instantly.</div></div>
-        <div class="info"><div class="k">Top Uses</div><div class="v">Loyalty Program Software, Expense Management Software.</div></div>
-        <div class="info"><div class="k">Number of receipt scanning API requests</div><div class="v">Over 1 billion.</div></div>
-        <div class="info"><div class="k">Receipt Parsing Accuracy</div><div class="v">99+% as standard. Upgradeable to 99.99%</div></div>
-        <div class="info"><div class="k">Receipt Processing Speed</div><div class="v">Sub-second, 90% under 2 seconds.</div></div>
-        <div class="info"><div class="k">Founders</div><div class="v">Rashad Al-safar and Ben Smith.</div></div>
-        <div class="info" style="grid-column:span 2"><div class="k">Business categories</div><div class="v">Optical Character Recognition (OCR) Software. Intelligent Document Processing (IDP). Application Programming Interface (API).</div></div>
+        <div class="info"><div class="k">Service Area</div><div class="v"><?php echo sc_text( 'about_service_area' ); ?></div></div>
+        <div class="info"><div class="k">Business Locations</div><div class="v"><?php echo sc_text( 'about_locations' ); ?></div></div>
+        <div class="info"><div class="k">Founded Date</div><div class="v"><?php echo sc_text( 'about_founded' ); ?></div></div>
+        <div class="info"><div class="k">Specialist in</div><div class="v"><?php echo sc_text( 'about_specialist' ); ?></div></div>
+        <div class="info"><div class="k">Main Product</div><div class="v"><?php echo sc_text( 'about_product' ); ?></div></div>
+        <div class="info"><div class="k">Top Uses</div><div class="v"><?php echo sc_text( 'about_top_uses' ); ?></div></div>
+        <div class="info"><div class="k">Number of receipt scanning API requests</div><div class="v"><?php echo sc_text( 'about_requests' ); ?></div></div>
+        <div class="info"><div class="k">Receipt Parsing Accuracy</div><div class="v"><?php echo sc_text( 'about_accuracy' ); ?></div></div>
+        <div class="info"><div class="k">Receipt Processing Speed</div><div class="v"><?php echo sc_text( 'about_speed' ); ?></div></div>
+        <div class="info"><div class="k">Founders</div><div class="v"><?php echo sc_text( 'about_founders' ); ?></div></div>
+        <div class="info" style="grid-column:span 2"><div class="k">Business categories</div><div class="v"><?php echo sc_text( 'about_categories' ); ?></div></div>
       </div>
     </div>
   </div>
@@ -520,9 +520,9 @@
 <section class="final">
   <div class="orb orbf1"></div>
   <div class="wrap in">
-    <span class="eyebrow" style="color:#7FD3F5">Instant Demo</span>
-    <h2>Instant Demo of the Tabscanner Receipt OCR API</h2>
-    <p>Free to use now, no credit card required. Start extracting receipt data from day 1.</p>
+    <span class="eyebrow" style="color:#7FD3F5"><?php echo sc_text( 'final_eyebrow' ); ?></span>
+    <h2><?php echo sc_text( 'final_h2' ); ?></h2>
+    <p><?php echo sc_text( 'final_p' ); ?></p>
     <div class="row">
       <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">RUN LIVE SPEED TEST <span class="arr">→</span></a>
       <a class="btn btn-ghost btn-lg" href="#contact" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">Schedule A Chat</a>
