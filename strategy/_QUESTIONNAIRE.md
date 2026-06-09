@@ -66,5 +66,12 @@ organised by the doc each answer feeds.
 39. KPIs / targets (leads, CPL, ROAS, signups)?
 40. Sales cycle length + average deal value (for ROI math)?
 
+## G. TECHNICAL-SEO.md
+41. Platform: CMS/theme, host, CDN, build/deploy method?
+42. Is there an XML sitemap, and is it submitted to **Google Search Console**? GSC access?
+43. Known **page speed / Core Web Vitals** scores or problems (mobile especially)?
+44. Which tools/access exist: Search Console, PageSpeed/CrUX, a crawler, analytics? Any known
+    technical issues (broken links, indexing problems, redirect messes, schema errors)?
+
 ---
 *After answering: Claude updates the matching doc(s), sets `status:` accordingly, and commits.*
