@@ -1,10 +1,14 @@
 # Tabscanner — living status
 
-## Where we are
-- WP Engine install `tabscanner` live on temp URL `tabscanner.wpenginepowered.com`, **noindexed**
-  (`blog_public=0`). Kadence parent installed.
-- Theme `tabscanner` (v4 design) scaffolded; first deploy = homepage.
-- Full 165-URL scrape captured in `_scrape/` (162×200, 2×301, 1×410).
+## Where we are — LIVE (cutover 2026-06-08)
+- **Live at https://tabscanner.com**, secure + indexable (`blog_public=1`). Theme `tabscanner` v0.5.5.
+- **DNS/SSL: stays PROXIED through Cloudflare (operator-locked 2026-06-09).** Cloudflare serves the SSL
+  (`CN=tabscanner.com`, Let's Encrypt) and fronts the WPE origin. WP Engine portal permanently shows
+  "DNS not pointed" / SSL `-` for tabscanner.com — **expected/cosmetic, not a bug** (see CLAUDE.md →
+  "Live / DNS / SSL" for the full rationale + the bypass procedure if ever wanted). DNS managed by Ben (CTO).
+- Sensa CMS wired (homepage + 6 inner pages, ~94 fields); WP Mail SMTP delivering; comments disabled;
+  demo uploader = full results + processing-only timer; hero CTA = "Book a consultation".
+- Full 165-URL parity verified pre-cutover; media + meta fully migrated.
 
 ## Done
 - [x] Repo scaffold (theme, deploy.yml, docs, .gitignore)

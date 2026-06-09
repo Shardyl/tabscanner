@@ -28,8 +28,56 @@ old `aipt`/WPBakery site. Same technical harness as the Sensa-family sites (see 
 - Webroot `/sites/tabscanner`. Temp URL `tabscanner.wpenginepowered.com`.
 - Same WP Engine account as the Sensa sites → both account keys already authorise this install.
 
-## Status: build on the noindexed temp URL; go live later (see HANDOVER.md).
-`blog_public=0` enforced for the whole build (§9c). Flip to 1 only at go-live.
+## Status — LIVE (cutover 2026-06-08)
+Live at **https://tabscanner.com**, secure, indexable (`blog_public=1`, homepage emits `index, follow`,
+`/sitemap_index.xml` 200). Full URL/meta/media parity verified pre-cutover (165/165). Contact form delivers
+via WP Mail SMTP (`api@tabscanner.com` Gmail app password). Comments disabled site-wide. Sensa CMS wired
+across the homepage + all 6 inner bespoke pages.
+
+## Live / DNS / SSL — Cloudflare proxy STAYS ON (operator-LOCKED 2026-06-09)
+**Decision: leave tabscanner.com PROXIED through Cloudflare. Do NOT bypass / grey-cloud.** This is the
+permanent topology.
+- **DNS** is at **Cloudflare**, managed by the partner **Ben Smith (CTO)** — NOT Rashad. `tabscanner.com`
+  + `www` are **orange-clouded (proxied)**: visitor → Cloudflare → WP Engine origin
+  (`tabscanner.wpengine.com` → `35.189.71.92`, Advanced Network). Public DNS resolves to Cloudflare IPs
+  (`104.21.x` / `172.67.x`).
+- **SSL is served by Cloudflare** (Universal SSL, `CN=tabscanner.com`, Let's Encrypt, auto-renew). Valid,
+  no action needed. WP Engine holds only its default `*.wpengine.com` backstop cert behind the proxy.
+- **⚠️ The WP Engine portal PERMANENTLY shows `tabscanner.com` = "DNS not pointed" + SSL `-`. This is
+  EXPECTED and cosmetic, NOT a bug and NOT pending.** WPE's checker sees Cloudflare's IPs, not its own, so
+  it reports "not pointed". Those columns only go green if you grey-cloud (which we are NOT doing). Ignore them.
+- **WPE will NOT issue its own LE cert while proxied.** WPE support confirmed (2026-06-09) they require
+  DNS-pointed-first, then auto-issue — there is **no pre-provision / cert-first path**. So a future bypass
+  CANNOT be zero-downtime.
+- **If a bypass is ever wanted** (only real benefit: removes Cloudflare bot-protection friction on the demo
+  upload API): grey-cloud both records → DNS points direct → WPE auto-issues its cert in minutes-to-~1h,
+  during which `https://` shows a cert-name-mismatch warning. Mitigate: lower CF TTL to 60s first, flip at
+  low traffic, hit WPE "re-check DNS" + support to expedite. **Instant rollback = re-enable the orange proxy**
+  (Cloudflare's cert returns in seconds). Verify readiness with
+  `openssl s_client -servername tabscanner.com -connect 35.189.71.92:443 | openssl x509 -noout -subject`
+  (CN flips `*.wpengine.com` → `tabscanner.com` once WPE has issued).
+- **Caching:** Cloudflare serves the HTML **DYNAMIC** (does NOT edge-cache it) → content/CMS edits show
+  through immediately, no Cloudflare purge needed. **WPE's own EverCache still caches pages**, so after any
+  WP-CLI/DB change purge it via `WpeCommon::purge_varnish_cache_all()` + `WpeCommon::clear_cdn_cache()`
+  (base64 `eval-file`); `wp cache flush` alone leaves the full-page layer stale.
+- **Cloudflare bot protection blocks non-browser multipart POSTs** to `/wp-json/tabscanner/v1/demo-process`
+  (curl/datacenter → HTTP 000/403). Real browsers (with the `cf_clearance` cookie) upload fine. So the live
+  receipt-upload demo can only be tested in a real browser, not via curl.
+- **Never touch** `api.` / `dashboard.` / `docs.` subdomains or MX/SPF/DKIM/DMARC (Ben's product infra + email).
+  Operator (Rashad) owns the WPE install; **DNS-record changes go to Ben.**
+
+## Post-launch wiring (done)
+- **Sensa CMS** (`sensa-cms` plugin, active) wired via `theme/inc/cms-config.php` → ~94 `sc_text()` fields
+  across homepage (hero, CTA band, intro, all section headings/eyebrows/CTAs, About grid) + Contact / Pricing
+  / 4 use-case pages. Edit in wp-admin → **Sensa CMS → Page Text**. Defaults = original copy; clearing a field
+  restores it. Theme has `sc_text/sc_img` fallback shims so it never fatals if the plugin is off.
+- **Hero CTA** = single "Book a consultation" button (`js-contact-open` → contact modal); Google/Email
+  sign-in removed from the hero.
+- **Demo uploader** (`theme/inc/demo-uploader.php` + `assets/js/uploader.js`): result gating REMOVED (returns
+  + renders the full line-item breakdown); timing split into upload-then-processing, **final headline = processing
+  time only** (poll cadence 500ms). API key in `tabscanner_demo_api_key` option (Settings → Tabscanner Demo).
+- **privacy-policy slug fix:** WP's default Privacy Policy draft squatted `privacy-policy` → deleted it, moved
+  the real page back to `/privacy-policy/`, re-applied its Rank Math meta (see skill §9d gotcha).
 
 ## Content port (full URL parity — all ~165 URLs)
 Home (front-page.php) + Contact + 4 Use Cases (Loyalty / Expense / Market Research / Case Studies) +
