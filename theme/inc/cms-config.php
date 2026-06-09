@@ -143,6 +143,18 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'pricepg_note', 'l' => 'Footnote under plans', 'ta' => 1, 'd' => 'Our enterprise plans are far less expensive than competitors like Amazon and Veryfi, at a fraction of a cent depending on volume.' ),
 						array( 'k' => 'pricepg_midcta_h2', 'l' => 'Closing CTA: heading', 'ta' => 1, 'd' => 'Free to use now' ),
 						array( 'k' => 'pricepg_midcta_h3', 'l' => 'Closing CTA: sub-heading', 'ta' => 1, 'd' => 'Start extracting receipt data from day 1. No credit card required for the starter plan.' ),
+						// Pro Service panel (shown on BOTH the homepage pricing section and the /pricing/ page)
+						array( 'k' => 'pro_eyebrow', 'l' => 'Pro Service: badge', 'd' => 'Pro Service' ),
+						array( 'k' => 'pro_price_amt', 'l' => 'Pro Service: price', 'd' => '$500' ),
+						array( 'k' => 'pro_price_per', 'l' => 'Pro Service: price period', 'd' => 'per month' ),
+						array( 'k' => 'pro_h2', 'l' => 'Pro Service: heading', 'ta' => 1, 'd' => 'A dedicated data team, tuning Tabscanner to your receipts' ),
+						array( 'k' => 'pro_p', 'l' => 'Pro Service: paragraph', 'ta' => 1, 'd' => 'Go beyond the standard plans. Our specialist data team monitors your receipt formats and continuously fine-tunes the engine around them, adding custom configurations and bespoke training across up to 10 new formats every month, so you reach the highest accuracy rate in the industry on exactly the receipts you process.' ),
+						array( 'k' => 'pro_f1', 'l' => 'Pro Service: feature 1', 'd' => 'Custom training on up to 10 receipt formats every month' ),
+						array( 'k' => 'pro_f2', 'l' => 'Pro Service: feature 2', 'd' => 'A dedicated specialist data team monitoring your formats' ),
+						array( 'k' => 'pro_f3', 'l' => 'Pro Service: feature 3', 'd' => 'Bespoke configurations and continuous fine-tuning' ),
+						array( 'k' => 'pro_f4', 'l' => 'Pro Service: feature 4', 'd' => "The industry's highest accuracy, tuned to your data" ),
+						array( 'k' => 'pro_cta', 'l' => 'Pro Service: closing question', 'd' => 'Interested in learning more?' ),
+						array( 'k' => 'pro_btn', 'l' => 'Pro Service: button label', 'd' => 'Book a consultation' ),
 					),
 				),
 

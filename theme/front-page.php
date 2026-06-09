@@ -286,6 +286,26 @@
         <a class="btn btn-ghost" href="#contact">GET STARTED</a>
       </div>
     </div>
+    <!-- PRO SERVICE -->
+    <div class="pro">
+      <div class="pro-glow"></div>
+      <div class="pro-top">
+        <span class="pro-badge"><?php echo sc_text( 'pro_eyebrow' ); ?></span>
+        <div class="pro-price"><b><?php echo sc_text( 'pro_price_amt' ); ?></b><span><?php echo sc_text( 'pro_price_per' ); ?></span></div>
+      </div>
+      <h2 class="pro-h"><?php echo sc_text( 'pro_h2' ); ?></h2>
+      <p class="pro-p"><?php echo sc_text( 'pro_p' ); ?></p>
+      <div class="pro-feats">
+        <div class="pro-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><?php echo sc_text( 'pro_f1' ); ?></span></div>
+        <div class="pro-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><?php echo sc_text( 'pro_f2' ); ?></span></div>
+        <div class="pro-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><?php echo sc_text( 'pro_f3' ); ?></span></div>
+        <div class="pro-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><?php echo sc_text( 'pro_f4' ); ?></span></div>
+      </div>
+      <div class="pro-cta">
+        <span class="pro-cta-q"><?php echo sc_text( 'pro_cta' ); ?></span>
+        <button type="button" class="btn btn-primary btn-lg js-contact-open"><?php echo sc_text( 'pro_btn' ); ?> <span class="arr">→</span></button>
+      </div>
+    </div>
   </div>
 </section>
 
