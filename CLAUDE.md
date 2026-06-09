@@ -88,3 +88,6 @@ imported as WP pages/posts at **identical slugs**, rendered via `page.php` / `si
 ## Conventions
 No em/en dashes in visible copy. Version bump every ship. Email/SMTP mailbox = `api@tabscanner.com`
 (operator pastes the app password into WP Mail SMTP at go-live; never in the repo).
+
+## Strategy & marketing context
+The site's marketing / brand / content / SEO source of truth is the **Strategy Pack** in [`strategy/`](strategy/README.md). Read it before any content, SEO, AEO, or marketing work. Scaffolded 2026-06-09; fill the `NEEDS-INPUT` gaps via `strategy/_QUESTIONNAIRE.md`.
