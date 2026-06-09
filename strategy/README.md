@@ -17,6 +17,7 @@ repo-root `CLAUDE.md`, not here.)
 | `CONTENT-STYLE-GUIDE.md` | Voice, tone, vocabulary, formatting rules | `needs-input` |
 | `SEO-STRATEGY.md` | Keyword/cluster map, AEO question-set, content plan, monitoring | `needs-input` |
 | `TECHNICAL-SEO.md` | On-site technical: crawl/index, architecture, speed + CWV, a11y, schema | `needs-input` |
+| `OFF-SITE-SEO.md` | Off-site authority: backlinks, digital PR, local SEO/citations, reviews | `needs-input` |
 | `DIGITAL-MARKETING-STRATEGY.md` | Channels, PPC, funnel, KPIs, analytics (umbrella) | `needs-input` |
 
 ## How to complete this pack

@@ -73,5 +73,14 @@ organised by the doc each answer feeds.
 44. Which tools/access exist: Search Console, PageSpeed/CrUX, a crawler, analytics? Any known
     technical issues (broken links, indexing problems, redirect messes, schema errors)?
 
+## H. OFF-SITE-SEO.md
+45. Current backlink/authority picture? Any tools (Ahrefs, GSC links report)?
+46. Newsworthy angles / PR assets: data, founder story, awards, standout case studies?
+47. Target outlets, journalists, podcasts, or directories in your space?
+48. **Local business?** Is Google Business Profile set up + optimised? Is NAP (name/address/
+    phone) consistent across directories? Which directories matter in your niche?
+49. Existing reviews/reputation + social/YouTube presence?
+50. Relationships or partners (clients, suppliers, collaborators) who could link or feature you?
+
 ---
 *After answering: Claude updates the matching doc(s), sets `status:` accordingly, and commits.*
