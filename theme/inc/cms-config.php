@@ -140,7 +140,7 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'pricepg_eyebrow', 'l' => 'Hero eyebrow', 'd' => 'Pricing' ),
 						array( 'k' => 'pricepg_h1', 'l' => 'Hero headline (HTML ok)', 'ta' => 1, 'd' => "Simple <span class='g'>Monthly Plans</span>" ),
 						array( 'k' => 'pricepg_lead', 'l' => 'Hero paragraph', 'ta' => 1, 'd' => '1 credit = 1 receipt scan. No credit card required for starter plan.' ),
-						array( 'k' => 'pricepg_note', 'l' => 'Footnote under plans', 'ta' => 1, 'd' => 'Our enterprise plans are far less expensive than competitors like Amazon and Veryfi, at a fraction of a cent depending on volume.' ),
+						array( 'k' => 'pricepg_note', 'l' => 'Footnote under plans (optional, blank = hidden)', 'ta' => 1, 'd' => '' ),
 						array( 'k' => 'pricepg_midcta_h2', 'l' => 'Closing CTA: heading', 'ta' => 1, 'd' => 'Free to use now' ),
 						array( 'k' => 'pricepg_midcta_h3', 'l' => 'Closing CTA: sub-heading', 'ta' => 1, 'd' => 'Start extracting receipt data from day 1. No credit card required for the starter plan.' ),
 						// Pro Service panel (shown on BOTH the homepage pricing section and the /pricing/ page)

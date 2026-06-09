@@ -71,7 +71,7 @@ get_header(); ?>
         <a class="btn btn-ghost" href="<?php echo esc_url( home_url('/contact-us/') ); ?>">GET STARTED</a>
       </div>
     </div>
-    <p class="price-note"><?php echo sc_text( 'pricepg_note' ); ?></p>
+    <?php if ( sc_text( 'pricepg_note' ) ) : ?><p class="price-note"><?php echo sc_text( 'pricepg_note' ); ?></p><?php endif; ?>
   </div>
 </section>
 
