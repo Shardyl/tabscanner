@@ -70,8 +70,11 @@ organised by the doc each answer feeds.
 41. Platform: CMS/theme, host, CDN, build/deploy method?
 42. Is there an XML sitemap, and is it submitted to **Google Search Console**? GSC access?
 43. Known **page speed / Core Web Vitals** scores or problems (mobile especially)?
-44. Which tools/access exist: Search Console, PageSpeed/CrUX, a crawler, analytics? Any known
-    technical issues (broken links, indexing problems, redirect messes, schema errors)?
+44. Which tools/access exist: Search Console (and can we get API access?), PageSpeed/CrUX, a
+    crawler, analytics? Any known technical issues (broken links, indexing, redirects, schema)?
+45. **Agent-readiness (agentic web):** is this an API/SaaS product where AI agents could use it
+    directly (→ worth an MCP server / Agent Skills), or a brochure site (→ just robots.txt +
+    llms.txt hygiene)? Anything already in place (llms.txt, MCP, agent-friendly content)?
 
 ## H. OFF-SITE-SEO.md
 45. Current backlink/authority picture? Any tools (Ahrefs, GSC links report)?

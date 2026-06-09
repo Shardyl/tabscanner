@@ -13,10 +13,10 @@ known issues. The standard checklist + methodology live in the `seo-campaign` sk
 the Step 5 monitoring loop audits these on a schedule and queues fixes.
 
 ## Platform & hosting
-WordPress on **WP Engine** (managed; EverCache + CDN). Theme: **Kadence** parent + bespoke child. Deploy: GitHub Actions rsync over the SSH gateway. <!-- confirm CDN/DNS specifics (Q41) -->
+<!-- NEEDS-INPUT: CMS/theme, host, CDN, build/deploy. (Q41) -->
 
 ## Crawlability & indexing
-- **Sitemap:** **Rank Math** XML sitemap. <!-- confirm submitted to Google Search Console (Q42) -->
+- **Sitemap:** <!-- NEEDS-INPUT: URL + submitted to GSC? (Q42) -->
 - **robots.txt:** <!-- NEEDS-INPUT: not blocking CSS/JS/assets? -->
 - **Noindex hygiene:** <!-- NEEDS-INPUT: noindex while building; removed at go-live; money pages indexable. -->
 - **Canonicals:** <!-- NEEDS-INPUT: self-referencing; no duplicate variants (slash/params/www/http). -->
@@ -42,13 +42,24 @@ Targets: **LCP < 2.5s · INP < 200ms · CLS < 0.1** (field via CrUX/GSC, lab via
 <!-- NEEDS-INPUT: HTTPS everywhere, no mixed content, valid cert, security headers. -->
 
 ## Structured data / schema
-Via **Rank Math** (Organization etc.); + the shared Sensa editor plugin where installed. <!-- verify types present + valid via Rich Results Test -->
+<!-- NEEDS-INPUT: which types live + how injected (Rank Math / Sensa plugin / hand-JSON-LD); valid? -->
 
 ## Redirects & broken links
 <!-- NEEDS-INPUT: 301s on URL changes, broken internal links, 404 handling. -->
 
 ## Tooling & access
-<!-- NEEDS-INPUT: Google Search Console, PageSpeed/CrUX, crawler, Lighthouse — access + who. (Q44) -->
+<!-- NEEDS-INPUT: Google Search Console (+ API access?), PageSpeed/CrUX, crawler, Lighthouse — access + who. (Q44) -->
+
+## Agent-readiness (agentic web)
+How ready the site is for AI agents (the layer beyond being cited in AI answers). Score via
+`isitagentready.com` (Discoverability, Content Accessibility, Bot Access Control, Protocol
+Discovery, Commerce). See the seo-campaign AEO agent-readiness layer.
+- **robots.txt for AI/agent crawlers:** <!-- NEEDS-INPUT: explicit, sane handling. (Q45) -->
+- **llms.txt + clean Markdown / content negotiation:** <!-- NEEDS-INPUT: present? -->
+- **MCP server / Agent Skills:** ELEVATED for Tabscanner (a receipt-OCR API): an MCP server + Agent Skills lets AI agents call the OCR API directly = a real growth channel, not just SEO. <!-- scope via Q45. STRATEGIC for API/SaaS products (e.g. an
+     OCR API) — agents call the product directly. Most brochure sites: emerging/low priority. (Q45) -->
+- **OAuth for agent access / agentic commerce:** <!-- NEEDS-INPUT: only if the site transacts. -->
+- **Current agent-readiness score:** <!-- NEEDS-INPUT -->
 
 ## Known issues / backlog
 <!-- NEEDS-INPUT: prioritised technical fixes. -->
