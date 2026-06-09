@@ -81,6 +81,7 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'kf_h2', 'l' => 'Key features: heading', 'ta' => 1, 'd' => 'Key Features of the Tabscanner Receipt OCR Software' ),
 						array( 'k' => 'midcta_h2', 'l' => 'Mid CTA: heading', 'ta' => 1, 'd' => "Ready to power up your software with Tabscanner's Receipt API?" ),
 						array( 'k' => 'midcta_h3', 'l' => 'Mid CTA: sub-heading', 'ta' => 1, 'd' => 'Plug into our receipt scanner OCR and get your software up and running with the most advanced IDP API.' ),
+						array( 'k' => 'midcta_btn', 'l' => 'Mid CTA: button label', 'd' => 'TEST DRIVE THE UPLOADER' ),
 						array( 'k' => 'insights_eyebrow', 'l' => 'Insights: eyebrow', 'd' => 'Advanced AI OCR' ),
 						array( 'k' => 'insights_h2', 'l' => 'Insights: heading', 'ta' => 1, 'd' => 'Receipt Scanner API Insights' ),
 						array( 'k' => 'insights_p', 'l' => 'Insights: sub-line', 'ta' => 1, 'd' => 'Resources for the Tabscanner API. Delve deeper into our AI OCR development. Layout-aware pipeline and receipt understanding. Plus tutorials for different code languages. How we guarantee real time processing. Why a POS receipts specialist is ideal for supermarket CPG brands.' ),
@@ -94,6 +95,8 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'final_eyebrow', 'l' => 'Final CTA: eyebrow', 'd' => 'Instant Demo' ),
 						array( 'k' => 'final_h2', 'l' => 'Final CTA: heading', 'ta' => 1, 'd' => 'Instant Demo of the Tabscanner Receipt OCR API' ),
 						array( 'k' => 'final_p', 'l' => 'Final CTA: paragraph', 'ta' => 1, 'd' => 'Free to use now, no credit card required. Start extracting receipt data from day 1.' ),
+						array( 'k' => 'final_btn1', 'l' => 'Final CTA: primary button', 'd' => 'RUN LIVE SPEED TEST' ),
+						array( 'k' => 'final_btn2', 'l' => 'Final CTA: secondary button', 'd' => 'Schedule A Chat' ),
 					),
 				),
 

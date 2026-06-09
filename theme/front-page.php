@@ -357,7 +357,7 @@
       <h2><?php echo sc_text( 'midcta_h2' ); ?></h2>
       <h3><?php echo sc_text( 'midcta_h3' ); ?></h3>
       <div class="row">
-        <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register">TEST DRIVE THE UPLOADER <span class="arr">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="https://dashboard.tabscanner.com/register"><?php echo sc_text( 'midcta_btn' ); ?> <span class="arr">→</span></a>
         <span class="or">or</span>
         <a class="s" href="https://dashboard.tabscanner.com/social-login/google">Sign in with Google</a>
         <a class="s" href="https://dashboard.tabscanner.com/register">Sign up with Email</a>
@@ -523,8 +523,8 @@
     <h2><?php echo sc_text( 'final_h2' ); ?></h2>
     <p><?php echo sc_text( 'final_p' ); ?></p>
     <div class="row">
-      <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register">RUN LIVE SPEED TEST <span class="arr">→</span></a>
-      <a class="btn btn-ghost btn-lg" href="#contact" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">Schedule A Chat</a>
+      <a class="btn btn-primary btn-lg" href="https://dashboard.tabscanner.com/register"><?php echo sc_text( 'final_btn1' ); ?> <span class="arr">→</span></a>
+      <a class="btn btn-ghost btn-lg" href="#contact" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)"><?php echo sc_text( 'final_btn2' ); ?></a>
     </div>
   </div>
 </section>
