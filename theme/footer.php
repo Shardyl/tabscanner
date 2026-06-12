@@ -7,7 +7,13 @@
         <div class="addr">P316 The Binary Tower, 32 Marasi Drive,<br>Business Bay – Dubai – United Arab Emirates.<br>+971 4 578 6254</div>
       </div>
       <div class="foot-col"><h5>Tabscanner</h5><a href="<?php echo esc_url(home_url('/pricing/')); ?>">Receipt OCR API Pricing</a><a href="<?php echo esc_url(home_url('/loyalty-program-receipt-scanning/')); ?>">Loyalty Program Receipt Scanning API</a><a href="<?php echo esc_url(home_url('/tabscanner-case-studies/')); ?>">OCR Receipt Case Studies</a><a href="<?php echo esc_url(home_url('/news/')); ?>">Receipt Data Extraction Insights (blog)</a><a href="<?php echo esc_url(home_url('/contact-us/')); ?>">Contact Tabscanner</a></div>
-      <div class="foot-col"><h5>Recent Articles</h5><a href="<?php echo esc_url(home_url('/what-is-layout-aware-pipeline-receipt-ocr/')); ?>">What Is a Layout Aware Pipeline in Receipt OCR?</a><a href="<?php echo esc_url(home_url('/what-does-ocr-stand-for/')); ?>">What Does OCR Stand For</a><a href="<?php echo esc_url(home_url('/receipt-parsing-vs-receipt-ocr-in-2026/')); ?>">Receipt Parsing Vs Receipt OCR in 2026</a></div>
+      <div class="foot-col"><h5>Recent Articles</h5><?php
+        $ts_recent = get_posts( array( 'numberposts' => 4, 'post_status' => 'publish', 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false ) );
+        foreach ( $ts_recent as $ts_rp ) {
+          echo '<a href="' . esc_url( get_permalink( $ts_rp ) ) . '">' . esc_html( get_the_title( $ts_rp ) ) . '</a>';
+        }
+        wp_reset_postdata();
+      ?></div>
       <div class="foot-col"><h5>OCR API Use Cases</h5><a href="<?php echo esc_url(home_url('/loyalty-program-receipt-scanning/')); ?>">Loyalty Program Receipt Scanning API</a><a href="<?php echo esc_url(home_url('/ocr-expense-management/')); ?>">Receipt OCR for Expense Management Software</a><a href="<?php echo esc_url(home_url('/market-research-through-receipt-ocr/')); ?>">Market Research Through Receipt OCR</a></div>
     </div>
     <div class="foot-bottom">
