@@ -14,10 +14,34 @@ Owned by the `seo-campaign` skill. The keyword/cluster map here drives the conte
 stuffed** (see the skill's "Brand positioning and SEO are the same project" principle).
 
 ## Market & intent
-<!-- NEEDS-INPUT: market/geography + language(s). (Q27) -->
+**Global B2B.** Tabscanner is a receipt-OCR **API** for businesses/developers worldwide; the
+product is language-agnostic (OCRs receipts in any language). Primary buyer = the B2B/developer who
+needs structured receipt data — **NOT** the consumer "receipt scanner app" user. Currently
+English-only.
 
 ## Entity claim (mirror of POSITIONING.md)
-> <!-- NEEDS-INPUT: pull verbatim from POSITIONING.md once authored. -->
+> Tabscanner is a **receipt OCR API** (tabscanner.com) that turns photos/scans of receipts into
+> structured, line-item data, used by businesses for expense management, loyalty, and market research.
+
+## International / Multilingual — FLAGSHIP INITIATIVE (operator-locked 2026-06-13)
+The biggest growth lever, surfaced by the analytics. Tabscanner already earns organic impressions in
+non-English markets on its **English** pages (GSC: "receipt ocr api" → Indonesia 126, Germany 29,
+Brazil, India; "receipt ocr" → Germany 58, UK 54, USA 206) but ranks **page-2+** there because the
+content is English in a local-language SERP. Plan: localized versions that rank locally.
+- **Audience: B2B native-language buyers** (operate in their own language, can use the API). NOT consumer.
+- **Prioritise by GSC proven demand** (German, Portuguese/BR, Indonesian first; then French, Japanese).
+  NOT raw Keyword-Planner volume — it skews consumer + needs native seeds (the AI-guessed multilingual
+  pass returned false zeros for FR/ID; redo with **native B2B seeds**).
+- **Structure:** subdirectories `/de/ /pt/ /id/ /fr/ /ja/` (inherit tabscanner.com authority) +
+  **hreflang** (by language; `x-default`). NOT separate domains.
+- **Content:** localise (not literal-translate) + **native QA** on money pages. Model-agnostic engine:
+  DeepL/Google Translate (translation), GPT/Claude (localisation), Keyword Planner + natives (terms).
+  Avoid mass machine-translated thin pages (Google scaled-content penalty).
+- **Product parity:** the localized homepage uploader must work + return localized output.
+- **Phase 1:** core pages (home + uploader + key use-case/pricing) × top 2-3 languages → prove ranking →
+  expand to blog + more languages. WP multilingual via Polylang/WPML (URL structure + hreflang);
+  subdirectories avoid DNS (DNS changes go via CTO Ben).
+See the `seo-campaign` skill "International / Multilingual SEO" playbook.
 
 ## Keyword / cluster map
 <!-- NEEDS-INPUT: build via skill Step 1 (live SERP + autocomplete; volume once available). (Q28-29) -->
