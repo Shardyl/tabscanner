@@ -48,11 +48,12 @@ get_header(); ?>
 <script>
 (function(){
   var f=document.getElementById('ts-enquiry'); if(!f) return;
+  var fStart=Date.now();
   var note=document.getElementById('ts-enquiry-note');
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; note.className='formnote'; note.textContent='Sending…';
-    var data={name:f.name.value,email:f.email.value,message:f.message.value,website:f.website.value};
+    var data={name:f.name.value,email:f.email.value,message:f.message.value,website:f.website.value,js:'ts1',et:Date.now()-fStart,turnstile:(f.querySelector('[name="cf-turnstile-response"]')||{}).value||''};
     fetch('<?php echo esc_url_raw( rest_url('tabscanner/v1/enquiry') ); ?>',{
       method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
     }).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})

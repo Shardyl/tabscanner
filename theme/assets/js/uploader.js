@@ -139,13 +139,14 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
   var cform = document.getElementById('contactModalForm');
+  var formStart = Date.now();
   if (cform) {
     cform.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = document.getElementById('contactModalNote');
       var btn = cform.querySelector('button[type=submit]');
       btn.disabled = true; note.className = 'formnote'; note.textContent = 'Sending…';
-      var data = { name: cform.name.value, email: cform.email.value, message: cform.message.value, website: cform.website.value };
+      var data = { name: cform.name.value, email: cform.email.value, message: cform.message.value, website: cform.website.value, js: 'ts1', et: Date.now() - formStart, turnstile: (cform.querySelector('[name="cf-turnstile-response"]') || {}).value || '' };
       fetch((cfg.base || '/wp-json/tabscanner/v1/') + 'enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
