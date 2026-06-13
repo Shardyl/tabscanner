@@ -51,7 +51,7 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'home_intro_eyebrow', 'l' => 'Eyebrow', 'd' => 'Real-Time Receipt OCR' ),
 						array( 'k' => 'home_intro_h2', 'l' => 'Heading', 'ta' => 1, 'd' => 'Real-Time Receipt OCR API Engineered to Understand Every Format and Language' ),
 						array( 'k' => 'home_intro_p1', 'l' => 'Paragraph 1 (HTML ok)', 'ta' => 1, 'd' => "Extract receipt data from images with <strong>unbeatable security</strong>. Optimizing your budget at a <strong>fraction of the cost</strong>. Trusted by major global enterprises and developers. Tabscanner offers seamless integration, no downtime, plus automated receipt parsing you can truly rely on anywhere in the world." ),
-						array( 'k' => 'home_intro_p2', 'l' => 'Paragraph 2 (HTML ok)', 'ta' => 1, 'd' => "Launch loyalty program software and apps backed by our <strong>dedicated customer service team</strong>, committed to your success. Now you can capture all buyer data with the best chance of customer retention. Plus expense management software free from privacy concerns. Built-in <strong>advanced fraud and tamper detection</strong>." ),
+						array( 'k' => 'home_intro_p2', 'l' => 'Paragraph 2 (HTML ok)', 'ta' => 1, 'd' => "Launch loyalty program software and apps backed by our <strong>dedicated customer service team</strong>, committed to your success. Now you can capture all buyer data with the best chance of customer retention." ),
 					),
 				),
 
