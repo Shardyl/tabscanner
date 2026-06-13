@@ -66,3 +66,11 @@ Discovery, Commerce). See the seo-campaign AEO agent-readiness layer.
 
 ---
 *Gaps? Run section G of `_QUESTIONNAIRE.md`.*
+## CMS / editability standard (operator-locked 2026-06-13)
+Every new page MUST be editable through the site's CMS by default: all substantive copy and every
+content image editable from the moment it goes live, never shipped hardcoded. On Sensa-family WP
+sites this means declaring a text group + image group in `inc/cms-config.php` (keys + defaults that
+match the current content exactly), adding the slug to `slug_groups` (text + images) and
+`bespoke_slugs`, and using `sc_text()` / `sc_img()` in the template; on other stacks use the
+equivalent editable-field mechanism. Building a page hardcoded "for now" is not acceptable. Full
+rule + scope live in the `web-page-builder` skill golden rules.
