@@ -3,6 +3,8 @@
   var cfg = window.TS_DEMO || {};
   var base = cfg.base || '/wp-json/tabscanner/v1/';
   var register = cfg.register || 'https://dashboard.tabscanner.com/register';
+  var t = cfg.t || {};
+  function L(k, d) { return (t && t[k]) ? t[k] : d; }
   var scan = document.getElementById('demo');
   if (!scan) return;
   var file = document.getElementById('uplFile');
@@ -57,27 +59,27 @@
   }
 
   function start(f) {
-    if (!/image\/(jpeg|png)/.test(f.type)) { alert('Please choose a JPG or PNG.'); return; }
+    if (!/image\/(jpeg|png)/.test(f.type)) { alert(L('err_filetype', 'Please choose a JPG or PNG.')); return; }
     setState('busy'); errBox.textContent = ''; result.innerHTML = '';
     thumb.src = URL.createObjectURL(f);
-    statusT.textContent = 'Optimising image…';
+    statusT.textContent = L('optimising', 'Optimising image…');
     // Phase 1: time the upload (image prep + transfer to the API).
     uploadMs = 0;
     t0 = performance.now(); clearInterval(ti);
     ti = setInterval(function () { timerEl.textContent = fmt(performance.now() - t0); }, 50);
     resizeImage(f, 2000).then(function (blob) {
-      statusT.textContent = 'Uploading…';
+      statusT.textContent = L('uploading', 'Uploading…');
       var fd = new FormData();
       fd.append('file', blob, 'receipt.jpg');
       var regionEl = document.getElementById('uplRegion');
       if (regionEl && regionEl.value) { fd.append('region', regionEl.value); }
       return fetch(base + 'demo-process', { method: 'POST', body: fd }).then(function (r) { return r.json(); });
     }).then(function (pr) {
-      if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || 'Upload failed.'); }
+      if (!pr || pr.success === false || !pr.token) { throw new Error((pr && pr.message) || L('err_upload', 'Upload failed.')); }
       // Upload finished — lock the upload time, then RESET the timer so it measures ONLY processing.
       uploadMs = performance.now() - t0;
       t0 = performance.now();
-      statusT.textContent = 'Reading receipt with AI…';
+      statusT.textContent = L('reading', 'Reading receipt with AI…');
       return poll(pr.token);
     }).then(done).catch(function (e) { fail(e.message); });
   }
@@ -91,8 +93,8 @@
             .then(function (r) { return r.json(); })
             .then(function (r) {
               if (r.status === 'done') return resolve(r);
-              if (r.status === 'failed') return reject(new Error('Could not read that receipt — try a clearer, straight-on photo.'));
-              if (++n > 70) return reject(new Error('That receipt is taking unusually long — please try again, or get in touch and we can help.'));
+              if (r.status === 'failed') return reject(new Error(L('err_read', 'Could not read that receipt — try a clearer, straight-on photo.')));
+              if (++n > 70) return reject(new Error(L('err_slow', 'That receipt is taking unusually long — please try again, or get in touch and we can help.')));
               tick();
             })
             .catch(reject);
@@ -107,7 +109,7 @@
     timerEl.textContent = fmt(procMs);            // final headline time = processing time only
     var res = r.result || {};
     var conf = res.totalConfidence != null ? (' · ' + Math.round(res.totalConfidence * 100) + '%') : '';
-    statusT.innerHTML = '<span class="badge-ok">Parsed' + conf + '</span>';
+    statusT.innerHTML = '<span class="badge-ok">' + L('parsed', 'Parsed') + conf + '</span>';
     var h = '<div class="upl-merch">' + esc(res.establishment || 'Receipt') + '</div>';
     var meta = [res.date || '', res.currency || ''].filter(Boolean).map(esc).join('  ·  ');
     if (meta) h += '<div class="upl-meta">' + meta + '</div>';
@@ -118,14 +120,14 @@
     if (res.subTotal != null) h += '<div class="upl-row"><span>Subtotal</span><span>' + money(res.subTotal) + '</span></div>';
     if (res.tax != null) h += '<div class="upl-row"><span>Tax</span><span>' + money(res.tax) + '</span></div>';
     h += '<div class="upl-row tot"><span>TOTAL</span><span>' + money(res.total) + '</span></div>';
-    h += '<div class="upl-timing">Upload ' + fmt(uploadMs) + '  ·  Processing <b>' + fmt(procMs) + '</b></div>';
+    h += '<div class="upl-timing">' + L('t_upload', 'Upload') + ' ' + fmt(uploadMs) + '  ·  ' + L('t_proc', 'Processing') + ' <b>' + fmt(procMs) + '</b></div>';
     result.innerHTML = h;
   }
 
   function fail(msg) {
     clearInterval(ti); setState('error');
     statusT.textContent = 'Error';
-    errBox.textContent = msg || 'Something went wrong.';
+    errBox.textContent = msg || L('err_generic', 'Something went wrong.');
   }
 
   // ----- contact modal -----
@@ -145,15 +147,15 @@
       e.preventDefault();
       var note = document.getElementById('contactModalNote');
       var btn = cform.querySelector('button[type=submit]');
-      btn.disabled = true; note.className = 'formnote'; note.textContent = 'Sending…';
+      btn.disabled = true; note.className = 'formnote'; note.textContent = L('sending', 'Sending…');
       var data = { name: cform.name.value, email: cform.email.value, message: cform.message.value, website: cform.website.value, js: 'ts1', et: Date.now() - formStart, turnstile: (cform.querySelector('[name="cf-turnstile-response"]') || {}).value || '' };
       fetch((cfg.base || '/wp-json/tabscanner/v1/') + 'enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok && res.j.ok) { note.className = 'formnote ok'; note.textContent = "Thanks — your message has been sent. We'll be in touch shortly."; cform.reset(); }
-          else { note.className = 'formnote err'; note.textContent = (res.j && res.j.error) || 'Sorry, something went wrong. Please email api@tabscanner.com.'; }
+          if (res.ok && res.j.ok) { note.className = 'formnote ok'; note.textContent = L('sent', "Thanks — your message has been sent. We'll be in touch shortly."); cform.reset(); }
+          else { note.className = 'formnote err'; note.textContent = (res.j && res.j.error) || L('send_err', 'Sorry, something went wrong. Please email api@tabscanner.com.'); }
         })
-        .catch(function () { note.className = 'formnote err'; note.textContent = 'Sorry, something went wrong.'; })
+        .catch(function () { note.className = 'formnote err'; note.textContent = L('send_err', 'Sorry, something went wrong.'); })
         .finally(function () { btn.disabled = false; });
     });
   }

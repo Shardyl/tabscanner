@@ -22,13 +22,33 @@ add_action( 'wp_enqueue_scripts', function () {
 	// Interactions (footer)
 	wp_enqueue_script( 'tabscanner-app', $uri . '/assets/js/app.js', array(), $v, true );
 
-	// Live hero uploader (homepage only) — talks to the server-side proxy
-	if ( is_front_page() ) {
+	// Live hero uploader — homepage + localised landing pages. Talks to the server-side proxy.
+	$is_fr = is_page( 'fr' );
+	$is_de = is_page( 'de' );
+	if ( is_front_page() || $is_fr || $is_de ) {
 		wp_enqueue_script( 'tabscanner-uploader', $uri . '/assets/js/uploader.js', array(), $v, true );
-		wp_localize_script( 'tabscanner-uploader', 'TS_DEMO', array(
+		$loc = array(
 			'base'     => esc_url_raw( rest_url( 'tabscanner/v1/' ) ),
 			'register' => 'https://dashboard.tabscanner.com/register',
-		) );
+		);
+		if ( $is_fr ) {
+			$loc['t'] = array(
+				'optimising' => "Optimisation de l'image…",
+				'uploading'  => 'Envoi…',
+				'reading'    => 'Lecture du ticket par IA…',
+				'parsed'     => 'Analysé',
+				'err_upload' => "Échec de l'envoi.",
+				'err_read'   => 'Lecture impossible. Essayez une photo plus nette et bien cadrée.',
+				'err_slow'   => 'Ce ticket prend un temps inhabituel. Réessayez ou contactez-nous.',
+				'err_generic'=> 'Une erreur est survenue.',
+				'err_filetype'=> 'Veuillez choisir un fichier JPG ou PNG.',
+				't_upload'   => 'Envoi',
+				't_proc'     => 'Traitement',
+				'sending'    => 'Envoi…',
+				'sent'       => 'Merci, votre message a bien été envoyé. Nous vous recontactons rapidement.',
+				'send_err'   => 'Désolé, une erreur est survenue. Écrivez-nous à api@tabscanner.com.',
+			);
+		}
 	}
 }, 20 );
 

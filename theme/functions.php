@@ -5,7 +5,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TABSCANNER_VERSION', '0.6.1' ); // bump every ship
+define( 'TABSCANNER_VERSION', '0.6.2' ); // bump every ship
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/contact-form.php';
@@ -51,3 +51,20 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 	register_nav_menus( array( 'primary' => 'Primary Menu' ) );
 } );
+
+/**
+ * hreflang cluster for the localised landing pages (EN home ↔ /fr/ ↔ /de/).
+ * Output on every page in the cluster so the alternates are reciprocal.
+ */
+add_action( 'wp_head', function () {
+	if ( ! ( is_front_page() || is_page( array( 'fr', 'de' ) ) ) ) { return; }
+	$alts = array(
+		'en'        => home_url( '/' ),
+		'x-default' => home_url( '/' ),
+	);
+	if ( get_page_by_path( 'fr' ) ) { $alts['fr'] = home_url( '/fr/' ); }
+	if ( get_page_by_path( 'de' ) ) { $alts['de'] = home_url( '/de/' ); }
+	foreach ( $alts as $lang => $url ) {
+		echo '<link rel="alternate" hreflang="' . esc_attr( $lang ) . '" href="' . esc_url( $url ) . '" />' . "\n";
+	}
+}, 5 );
