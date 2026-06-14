@@ -34,9 +34,13 @@ content is English in a local-language SERP. Plan: localized versions that rank 
   pass returned false zeros for FR/ID; redo with **native B2B seeds**).
 - **Structure:** subdirectories `/de/ /pt/ /id/ /fr/ /ja/` (inherit tabscanner.com authority) +
   **hreflang** (by language; `x-default`). NOT separate domains.
-- **Content:** localise (not literal-translate) + **native QA** on money pages. Model-agnostic engine:
-  DeepL/Google Translate (translation), GPT/Claude (localisation), Keyword Planner + natives (terms).
-  Avoid mass machine-translated thin pages (Google scaled-content penalty).
+- **Content:** localise (not literal-translate) + **native QA on money pages = the quality gate,
+  regardless of which model translates.** Pluggable, best-tool-per-job engine (API key in vault, never
+  committed): **DeepL / Google Cloud Translation** for raw translation (purpose-built MT usually beats
+  general LLMs, incl. GPT and Claude); **OpenAI (ChatGPT) or Claude** for localisation/transcreation +
+  local SEO phrasing (pick whichever tests better per language); **Keyword Planner + natives** for the
+  actual local terms. Operator flagged OpenAI may localise better — wire it as the LLM option and A/B per
+  language. Avoid mass machine-translated thin pages (Google scaled-content penalty).
 - **Product parity:** the localized homepage uploader must work + return localized output.
 - **Phase 1:** core pages (home + uploader + key use-case/pricing) × top 2-3 languages → prove ranking →
   expand to blog + more languages. WP multilingual via Polylang/WPML (URL structure + hreflang);
