@@ -5,7 +5,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TABSCANNER_VERSION', '0.6.2' ); // bump every ship
+define( 'TABSCANNER_VERSION', '0.6.3' ); // bump every ship
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 require_once get_stylesheet_directory() . '/inc/contact-form.php';
@@ -62,8 +62,10 @@ add_action( 'wp_head', function () {
 		'en'        => home_url( '/' ),
 		'x-default' => home_url( '/' ),
 	);
-	if ( get_page_by_path( 'fr' ) ) { $alts['fr'] = home_url( '/fr/' ); }
-	if ( get_page_by_path( 'de' ) ) { $alts['de'] = home_url( '/de/' ); }
+	$fr = get_page_by_path( 'fr' );
+	if ( $fr && 'publish' === $fr->post_status ) { $alts['fr'] = home_url( '/fr/' ); }
+	$de = get_page_by_path( 'de' );
+	if ( $de && 'publish' === $de->post_status ) { $alts['de'] = home_url( '/de/' ); }
 	foreach ( $alts as $lang => $url ) {
 		echo '<link rel="alternate" hreflang="' . esc_attr( $lang ) . '" href="' . esc_url( $url ) . '" />' . "\n";
 	}
