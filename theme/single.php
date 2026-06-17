@@ -16,7 +16,7 @@ while ( have_posts() ) : the_post(); ?>
 
   <section class="article"><div class="wrap">
     <?php if ( has_post_thumbnail() ) : ?>
-      <div style="max-width:880px;margin:0 auto 34px"><?php the_post_thumbnail( 'large', array( 'style' => 'width:100%;border-radius:16px' ) ); ?></div>
+      <div style="max-width:760px;margin:0 auto 34px;aspect-ratio:16/9;border-radius:16px;overflow:hidden"><?php the_post_thumbnail( 'large', array( 'style' => 'width:100%;height:100%;object-fit:cover;display:block' ) ); ?></div>
     <?php endif; ?>
     <div class="prose"><?php the_content(); ?></div>
     <div style="text-align:center;margin-top:46px"><a class="btn btn-ghost" href="<?php echo esc_url( home_url( '/news/' ) ); ?>">← All articles</a></div>
