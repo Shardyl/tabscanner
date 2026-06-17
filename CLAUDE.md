@@ -66,6 +66,17 @@ permanent topology.
 - **Never touch** `api.` / `dashboard.` / `docs.` subdomains or MX/SPF/DKIM/DMARC (Ben's product infra + email).
   Operator (Rashad) owns the WPE install; **DNS-record changes go to Ben.**
 
+## Favicon (Google Search) — 2026-06-17
+The favicon is the **WordPress Site Icon** (attachment #623, `wp option get site_icon`), generated from the
+blue receipt mark. WP emits crawlable `<link rel="icon">` tags (→ `/wp-content/uploads/2026/06/icon512-*.png`)
+that Google Search reads. **Do NOT re-add an inline `data:` URI favicon to `header.php`** — Google ignores
+data-URI favicons (that was the bug: generic globe in search). The old root `/favicon.ico` was a 0-byte file;
+replaced with real bytes (2467) at `/sites/tabscanner/favicon.ico`.
+- **Known cosmetic leftover:** Cloudflare cached the OLD 0-byte `/favicon.ico` with `max-age=31536000` (1yr),
+  so `https://tabscanner.com/favicon.ico` still serves 0 bytes via CF (`cf-cache-status: HIT`) even though
+  origin is fixed (`?v=` busts it → 2467 bytes). This does NOT affect Google (it uses the `<link>` tags). To
+  clear it, **Ben** purges that one URL at Cloudflare (Purge by URL → `https://tabscanner.com/favicon.ico`).
+
 ## Post-launch wiring (done)
 - **Sensa CMS** (`sensa-cms` plugin, active) wired via `theme/inc/cms-config.php` → ~94 `sc_text()` fields
   across homepage (hero, CTA band, intro, all section headings/eyebrows/CTAs, About grid) + Contact / Pricing
