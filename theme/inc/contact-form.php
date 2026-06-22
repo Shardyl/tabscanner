@@ -86,6 +86,18 @@ function tabscanner_handle_enquiry( WP_REST_Request $req ) {
 		'Reply-To: ' . $name . ' <' . $email . '>',
 	);
 
+	// Forward straight to Cortex — triaged (spam filtered) + captured as a lead. URL/token live in wp_options, not the repo.
+	$cortex_url   = get_option( 'cortex_enquiry_url' );
+	$cortex_token = get_option( 'cortex_enquiry_token' );
+	if ( $cortex_url && $cortex_token ) {
+		wp_remote_post( $cortex_url, array(
+			'timeout'  => 8,
+			'blocking' => false,
+			'headers'  => array( 'Content-Type' => 'application/json', 'X-Token' => $cortex_token ),
+			'body'     => wp_json_encode( array( 'name' => $name, 'email' => $email, 'message' => $msg ) ),
+		) );
+	}
+
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	return new WP_REST_Response( array( 'ok' => (bool) $sent ), $sent ? 200 : 500 );
