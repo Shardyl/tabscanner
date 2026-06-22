@@ -66,6 +66,16 @@ permanent topology.
 - **Never touch** `api.` / `dashboard.` / `docs.` subdomains or MX/SPF/DKIM/DMARC (Ben's product infra + email).
   Operator (Rashad) owns the WPE install; **DNS-record changes go to Ben.**
 
+## Removed posts — 410 Gone (2026-06-22)
+Six outdated/YMYL blog posts were **trashed** (reversible — still in the DB + nightly backup + `_scrape` mirror)
+and serve **HTTP 410 Gone** via `mu-plugins/tabscanner-410-gone.php` (slug-matched, so Google drops them fast
+instead of a soft 404). Operator-approved after a full Search-Quality-Rater audit (reports on Desktop). Slugs:
+`accounting-firms-in-the-uae-are-seeing-a-boom...`, `it-pays-to-track-all-your-business-expenses...`,
+`are-you-mtd-ready...`, `claiming-expenses-when-working-from-home...`, `considering-starting-a-business-in-dubai...`,
+`using-receipt-scanning-api`. Internal links to them were stripped from posts #62/#116/#137. To restore one:
+untrash it AND remove its slug from the mu-plugin array. (NB: the uniform sitemap `<lastmod>=2026-06-17` is from
+the image/alt-text bulk update, not a glitch — regenerating the sitemap does not vary it.)
+
 ## Favicon (Google Search) — 2026-06-17
 The favicon is the **WordPress Site Icon** (attachment #623, `wp option get site_icon`), generated from the
 blue receipt mark. WP emits crawlable `<link rel="icon">` tags (→ `/wp-content/uploads/2026/06/icon512-*.png`)
