@@ -450,6 +450,32 @@ footer{background:#06121D;color:#9FB4C9;padding:72px 0 34px}
 .prose table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;display:block;overflow-x:auto}
 .prose th,.prose td{border:1px solid var(--line-2);padding:10px 12px;text-align:left}
 .prose iframe,.prose video{max-width:100%;border-radius:12px;margin:22px 0}
+/* blog post: article header, key takeaways, author bio, closing CTA */
+.post-kicker{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-3);margin-bottom:14px}
+.phero .dek{font-size:19px;color:var(--body);max-width:680px;margin:16px auto 0;line-height:1.6}
+.byline{display:inline-flex;align-items:center;gap:11px;margin-top:24px;font-size:14px;color:var(--muted)}
+.byline-av{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid var(--line-2)}
+.byline strong{color:var(--ink-2);font-weight:600}
+.post-hero{max-width:760px;margin:0 auto 34px;aspect-ratio:16/9;border-radius:16px;overflow:hidden}
+.keytakeaways{max-width:760px;margin:0 auto 32px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:var(--r-sm);padding:22px 26px}
+.keytakeaways h2{font-size:13px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--brand-3);margin:0 0 12px}
+.keytakeaways ul{margin:0;padding-left:20px}
+.keytakeaways li{margin-bottom:9px;color:var(--ink-2);line-height:1.55}
+.prose a[target=_blank]::after,.prose a[target="_blank"]::after{content:"\2197";font-size:.72em;margin-left:1px;opacity:.55;vertical-align:super}
+.authorbio{max-width:760px;margin:50px auto 0;display:flex;gap:20px;align-items:flex-start;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px}
+.authorbio>img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--line-2)}
+.authorbio-name{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);font-size:17px;margin-bottom:2px}
+.authorbio-name span{font-weight:500;color:var(--muted);font-size:14px}
+.authorbio-body p{font-size:15px;color:var(--body);line-height:1.62;margin:7px 0 13px}
+.authorbio-links{display:flex;gap:18px}
+.authorbio-links a{font-size:14px;font-weight:600;color:var(--brand-3)}
+.authorbio-links a:hover{text-decoration:underline}
+.postcta{max-width:760px;margin:48px auto 0;background:var(--grad);border-radius:var(--r-lg);padding:42px 36px;text-align:center;color:#fff;box-shadow:var(--shadow-blue)}
+.postcta h2{color:#fff;font-size:clamp(23px,3.4vw,31px);margin-bottom:12px;line-height:1.18}
+.postcta p{color:rgba(255,255,255,.94);font-size:16px;max-width:520px;margin:0 auto 22px;line-height:1.6}
+.postcta .btn{background:#fff;color:var(--brand-3);box-shadow:0 14px 34px -12px rgba(0,0,0,.32)}
+.postcta .btn:hover{transform:translateY(-2px)}
+@media(max-width:560px){.authorbio{flex-direction:column}.authorbio>img{width:66px;height:66px}}
 .bloglist .card{display:block}
 .pagination{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:44px}
 .pagination a,.pagination span{padding:9px 15px;border:1px solid var(--line-2);border-radius:10px;font-size:14px;color:var(--ink-2);background:#fff}
