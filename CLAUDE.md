@@ -112,3 +112,9 @@ No em/en dashes in visible copy. Version bump every ship. Email/SMTP mailbox = `
 
 ## Strategy & marketing context
 The site's marketing / brand / content / SEO source of truth is the **Strategy Pack** in [`strategy/`](strategy/README.md). Read it before any content, SEO, AEO, or marketing work. Scaffolded 2026-06-09; fill the `NEEDS-INPUT` gaps via `strategy/_QUESTIONNAIRE.md`.
+
+## Keep this file honest
+
+If this session changes anything this file describes (access, deploy mechanics, structure,
+standing rules), update this CLAUDE.md in the same commit and push it. This file is the first
+thing every new conversation reads; a stale line here costs a future session real time.
