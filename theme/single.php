@@ -7,10 +7,10 @@ while ( have_posts() ) : the_post();
 	$au       = get_the_author_meta( 'ID' );
 	$bio      = get_the_author_meta( 'description', $au );
 	$role     = get_the_author_meta( 'role', $au );
-	$linkedin = get_the_author_meta( 'linkedin', $au );
-	$github   = get_the_author_meta( 'github', $au );
 	$headshot = get_the_author_meta( 'headshot', $au );
 	$name     = get_the_author_meta( 'display_name', $au );
+	// Show "Updated" only when the post was genuinely revised after publishing (>48h gap).
+	$updated  = ( get_the_modified_time( 'U' ) - get_the_time( 'U' ) > 2 * DAY_IN_SECONDS ) ? get_the_modified_date() : '';
 	$cats     = get_the_category();
 	$kicker   = ! empty( $cats ) ? $cats[0]->name : 'Article';
 	?>
@@ -24,7 +24,7 @@ while ( have_posts() ) : the_post();
       <?php if ( has_excerpt() ) : ?><p class="dek"><?php echo esc_html( get_the_excerpt() ); ?></p><?php endif; ?>
       <div class="byline">
         <?php if ( $headshot ) : ?><img class="byline-av" src="<?php echo esc_url( $headshot ); ?>" alt="<?php echo esc_attr( $name ); ?>"><?php endif; ?>
-        <span><strong><?php echo esc_html( $name ); ?></strong><?php echo $role ? ', ' . esc_html( $role ) : ''; ?> &middot; <?php echo esc_html( get_the_date() ); ?></span>
+        <span><strong><?php echo esc_html( $name ); ?></strong><?php echo $role ? ', ' . esc_html( $role ) : ''; ?> &middot; <?php echo esc_html( get_the_date() ); ?><?php echo $updated ? ' &middot; Updated ' . esc_html( $updated ) : ''; ?></span>
       </div>
     </div>
   </section>
@@ -42,10 +42,6 @@ while ( have_posts() ) : the_post();
       <div class="authorbio-body">
         <div class="authorbio-name"><?php echo esc_html( $name ); ?><?php echo $role ? ' <span>' . esc_html( $role ) . '</span>' : ''; ?></div>
         <p><?php echo esc_html( $bio ); ?></p>
-        <div class="authorbio-links">
-          <?php if ( $linkedin ) : ?><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener nofollow">LinkedIn</a><?php endif; ?>
-          <?php if ( $github ) : ?><a href="<?php echo esc_url( $github ); ?>" target="_blank" rel="noopener nofollow">GitHub</a><?php endif; ?>
-        </div>
       </div>
     </div>
     <?php endif; ?>
