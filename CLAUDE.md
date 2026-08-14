@@ -106,6 +106,18 @@ Pricing / About / FAQ are bespoke templates. 8 legal pages + 143 blog posts + ca
 imported as WP pages/posts at **identical slugs**, rendered via `page.php` / `single.php` / `archive.php`.
 2 source URLs 301-redirect + 1 is 410 — preserve those statuses.
 
+## Blog author box + dates (shipped 2026-08-14, Mat's spec)
+All published posts are authored by **Ben Smith (user 4)**; his author meta (`description`, `role`,
+`headshot` = gravatar URL) drives the byline + author box in `single.php`. **No LinkedIn/GitHub links
+in the author box** (meta keys still hold values; the template just doesn't render them — keep it that
+way). Byline shows "Updated <date>" only when modified >48h after publish; `dateModified` schema comes
+from Rank Math — do NOT add a second schema source or a last-updated plugin. Old in-content junk
+(stale "Last Updated on" lines, embedded author boxes, "CLICK HERE…" CTAs) was stripped 2026-08-14 with
+post_modified preserved; pre-change snapshot at
+`cortex:/opt/cortex-knowledge/backups/tabscanner-posts-pre-authorbox-2026-08-14.json`. **Bulk post edits
+must go through direct `$wpdb` writes (eval-file), never `wp post update`, or every post's modified
+date jumps to today** and the visible Updated dates + schema lie.
+
 ## Conventions
 No em/en dashes in visible copy. Version bump every ship. Email/SMTP mailbox = `api@tabscanner.com`
 (operator pastes the app password into WP Mail SMTP at go-live; never in the repo).

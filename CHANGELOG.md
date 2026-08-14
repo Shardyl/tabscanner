@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.7 — 2026-08-14
+- Author box site-wide (Mat's list): `post_author` → Ben (user 4) on all 137 published posts (was 0 on
+  134 — migration artifact that also broke the Rank Math Person schema). Headshot meta → gravatar
+  (`1.gravatar.com/avatar/c944f942…?s=160`). Done via SQL/WP-CLI so no modified dates moved.
+- `single.php`: byline shows "Updated <date>" when modified >48h after publish (visible date only —
+  Rank Math already emits `dateModified` schema, no second schema source added); LinkedIn/GitHub
+  author links removed from the author box (meta values kept).
+- Content cleanup across 135 posts via direct-`$wpdb` eval-file (post_modified untouched, verified
+  byte-identical): stale in-content "Last Updated on …" lines (133), embedded end-of-post author
+  img+blurb in 4 variants incl. escaped sab boxes + empty tokyoben social anchors (6 posts) and the
+  Cortex-styled author cards on 636/648 (byline de-linked to plain text), old
+  "CLICK HERE TO START USING TABSCANNER API" CTAs (134, incl. `/#Uploader` + bare-anchor variants).
+- Full pre-change snapshot: `cortex:/opt/cortex-knowledge/backups/tabscanner-posts-pre-authorbox-2026-08-14.json`.
+
 ## 0.2.0 — 2026-06-07
 - Build Contact + 4 Use Case pages (Loyalty, Expense Management, Market Research, Case Studies) in the
   v4 style, word-for-word from the scrape. Templates: `page-{slug}.php` (auto-matched to page slugs).
